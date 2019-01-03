@@ -1,0 +1,453 @@
+<section id="home" class="home-page-content page-content">
+    <section class="homepage-slider">
+        <div class="container-fluid">
+        	<div class="row">
+				<!--START: home_carousel-->
+				<section class="homepage-slider">
+
+					<div class="homeCarousel flexslider" data-animation="[hc_effect]" data-slideshowspeed="[hc_delay]">
+						<script>
+								//Slide JSON format
+								/*
+								{
+									"background_color": "#293b54",
+									"background_image": "/assets/templates/Mercury-core/images/content/slider-bg.jpg",
+									"front_image": "",
+									"button_link": "#",
+									"button_text": "Shop now",
+									"details": "",
+									"heading": "Make an Impact",
+									"text_color": "#fff"
+								}
+								*/
+
+								var slides = '[';
+								//<!--START: carousel-->
+								slides += '[image],'
+								//<!--END: carousel-->
+
+								//remove last comma (,)
+								slides = slides.substring(0, slides.length - 1);
+
+								slides = slides + ']';
+						</script>
+
+						<div id="hp-slide-format" class="hidden">
+							<div class="container-fluid">
+								<div class="row hp-slide-content">
+									<div class="col-md-12">
+										<div class="row">
+											<div class="hp-slider-text-outer">
+												<div class="hp-slider-text">
+													<h3></h3>
+													<p></p>
+													<div class="hp-slider-cta">
+														<a href="" class="btn btn-primary"></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-12 hidden">
+										<div class="hp-slider-img_"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<ul id="hp-slides" class="slides"></ul>
+					</div>
+				</section>
+				<!--END: home_carousel-->
+				
+            </div>
+        </div>
+    </section>
+	
+	<section id="Promos" class="promo-banners hidden">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<a href="/Women_c_1.html">
+						<div class="promo-img">
+							<img src="/assets/images/promos/promo1.jpg" class="img-responsive img" alt="Women's Orthopedic Footwear" />
+							<div class="btn btn-default">Women's Collection</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6">
+					<a href="/Men_c_7.html">
+						<div class="promo-img">
+							<img src="/assets/images/promos/promo2.jpg" class="img-responsive img" alt="Men's Orthotic Shoes" />
+							<div class="btn btn-default">Men's Collection</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6">
+					<a href="/Laceless_c_17.html">
+						<div class="promo-img">
+							<img src="/assets/images/promos/promo3.jpg" class="img-responsive img" alt="Laceless Shoes for Men and Women" />
+							<div class="btn btn-default">Laceless Footwear</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6">
+					<a href="/Shoe-Inserts_c_8.html">
+						<div class="promo-img">
+							<img src="/assets/images/promos/promo4.jpg" class="img-responsive img" alt="Orthopedic Shoe Inserts" />
+							<div class="btn btn-default">Shoe Inserts</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <!--START: CATEGORY_HEADER-->
+	<section class="category-header">
+		<div class="container">[CONTENT]</div>
+	</section>
+    <!--END: CATEGORY_HEADER-->
+
+	<!--START: FEATURE_MENU-->
+    <section class="products-section">
+        <div class="container">
+           	<div class="row">
+				<h2 class="header-specials"><span>[category_Header-specials]</span></h2>
+	        </div>
+			<!--START: CATEGORY_ITEMS-->
+			<div class="product-items product-items-[product-cols-number]">
+				<div id="carousel-sellers" class="carousel slide">
+					<!--START: ITEM_TEMPLATE_0-->
+					[product_items]
+					<!--END: ITEM_TEMPLATE_0-->
+				</div>
+			</div>
+			<!--END: CATEGORY_ITEMS-->
+        </div>
+    </section>
+	<!--END: FEATURE_MENU-->
+
+	<section class="promo-banners hidden">
+		<div class="container-fluid">
+			<div class="row">
+				<a href="#">
+					<div class="promo-img">
+						<img src="/assets/images/full-banner.jpg" class="img-responsive img" alt="" />
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!--START: CATEGORY_FOOTER-->
+    <section class="category-footer">
+    	<div class="container">[CONTENT]</div>
+    </section>
+    <!--END: CATEGORY_FOOTER-->
+
+</section>
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/lib/flexslider/jquery.flexslider-min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    jQuery(function () {
+        var slidesJson = jQuery.parseJSON(slides);
+        jQuery(slidesJson).each(function (i, element) {
+            var slideItem = jQuery("<li></li>");
+            var slideFormat = jQuery('#hp-slide-format > div').clone();
+
+            jQuery(slideItem).css('background-image', 'url('+element.background_image+')');
+            jQuery(slideItem).css('background-color', element.background_color);
+            jQuery(slideFormat).find('.hp-slider-text').css('color', element.text_color);
+
+            jQuery(slideFormat).find('.hp-slider-text h3').html(element.heading);
+            jQuery(slideFormat).find('.hp-slider-text p').html(element.details);
+            jQuery(slideFormat).find('.hp-slider-cta a').attr('href', element.button_link);
+            jQuery(slideFormat).find('.hp-slider-cta a').html(element.button_text);
+            jQuery(slideFormat).find('.hp-slider-img').append('<img src=' + element.front_image + ' alt="" />');
+    
+            jQuery(slideItem).append(slideFormat);
+
+            jQuery('#hp-slides').append(slideItem);
+        });
+
+        jQuery('.homeCarousel').flexslider({
+            animation: jQuery('.homeCarousel').attr('data-animation'),
+			slideshow: true,
+            slideshowSpeed: jQuery('.homeCarousel').attr('data-slideshowspeed'),
+            controlNav: false,
+            keyboard: false
+        });
+
+        var $window = jQuery(window),
+		flexslider = { vars: {} };
+	});
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+/*	
+    jQuery(function () {
+        jQuery('#carousel-sellers').slick({
+            dots: false,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            responsive: [
+              {
+                  breakpoint: 1024,
+                  settings: {
+                      slidesToShow: 3,
+                      slidesToScroll: 1
+                  }
+              },
+              {
+                  breakpoint: 600,
+                  settings: {
+                      slidesToShow: 1,
+                      slidesToScroll: 1
+                  }
+              }
+            ]
+        });
+
+        var carouselWidth = $('#carousel-sellers').width();
+        var carouselPad = 15 + 'px';
+        $('.product-item.slick-slide').css('max-width', carouselWidth);
+        $('.product-item.slick-slide').css('padding-left', carouselPad);
+        $('.product-item.slick-slide').css('padding-right', carouselPad);
+*/		
+	});
+</script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/lib/flexslider/flexslider.css" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+<style>
+    .TSnav {
+        position: relative;
+        height: 50px;
+    }
+	.slick-list {
+		padding: 0 15px;
+	}
+    /* Arrows */
+    .slick-prev,
+    .slick-next
+    {
+        font-size: 0;
+        line-height: 0;
+
+        position: absolute;
+		z-index: 1;
+        top: 25%;
+
+        display: block;
+
+        width: 25px;
+        height: 40px;
+        padding: 0;
+        cursor: pointer;
+
+        color: transparent;
+        border: none;
+        outline: none;
+        background: transparent;
+    }
+    .slick-prev:hover,
+    .slick-prev:focus,
+    .slick-next:hover,
+    .slick-next:focus
+    {
+        color: transparent;
+        outline: none;
+        background: transparent;
+    }
+    .slick-prev:hover:before,
+    .slick-prev:focus:before,
+    .slick-next:hover:before,
+    .slick-next:focus:before
+    {
+        opacity: 1;
+    }
+    .slick-prev.slick-disabled:before,
+    .slick-next.slick-disabled:before
+    {
+        opacity: .25;
+    }
+
+    .slick-prev:before,
+    .slick-next:before
+    {
+        font-family: "fontello";
+        font-size: 40px;
+        line-height: 1;
+
+        opacity: .75;
+        color: #000;
+
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .slick-prev
+    {
+        left: -5px;
+    }
+    [dir='rtl'] .slick-prev
+    {
+        right: -5px;
+        left: auto;
+    }
+    .slick-prev:before
+    {
+        content: '\f104';
+    }
+    [dir='rtl'] .slick-prev:before
+    {
+        content: '\f105';
+    }
+
+    .slick-next
+    {
+        right: -5px;
+    }
+    [dir='rtl'] .slick-next
+    {
+        right: auto;
+        left: -5px;
+    }
+    .slick-next:before
+    {
+        content: '\f105';
+    }
+    [dir='rtl'] .slick-next:before
+    {
+        content: '\f104';
+    }
+    @media(min-width: 1200px) {
+        .slick-prev,
+        .slick-next
+        {
+            top: 20%;
+            width: 35px;
+            height: 50px;
+        }
+        .slick-prev:before,
+        .slick-next:before
+        {
+            font-size: 75px;
+        }
+
+        .slick-prev
+        {
+            left: -40px;
+        }
+        [dir='rtl'] .slick-prev
+        {
+            right: -40px;
+            left: auto;
+        }
+
+        .slick-next
+        {
+            right: -40px;
+        }
+        [dir='rtl'] .slick-next
+        {
+            right: auto;
+            left: -40px;
+        }
+    }
+    /* Dots */
+    .slick-dotted.slick-slider
+    {
+    }
+
+    .slick-dots
+    {
+        position: absolute;
+        bottom: 100%;
+
+        display: block;
+
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+        list-style: none;
+
+        text-align: center;
+    }
+    .slick-dots li
+    {
+        position: relative;
+
+        display: inline-block;
+
+        width: 20px;
+        height: 20px;
+        margin: 0 5px;
+        padding: 0;
+
+        cursor: pointer;
+    }
+    .slick-dots li button
+    {
+        font-size: 0;
+        line-height: 0;
+
+        display: block;
+
+        width: 20px;
+        height: 20px;
+        padding: 5px;
+
+        cursor: pointer;
+
+        color: transparent;
+        border: 0;
+        outline: none;
+        background: transparent;
+    }
+    .slick-dots li button:hover,
+    .slick-dots li button:focus
+    {
+        outline: none;
+    }
+    .slick-dots li button:hover:before,
+    .slick-dots li button:focus:before
+    {
+        opacity: 1;
+    }
+    .slick-dots li button:before
+    {
+        font-family: 'slick';
+        font-size: 20px;
+        line-height: 20px;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 20px;
+        height: 20px;
+
+        content: '•';
+        text-align: center;
+
+        opacity: .25;
+        color: black;
+
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .slick-dots li.slick-active button:before
+    {
+        opacity: .75;
+        color: black;
+    }
+</style>
+<!--END: template_styles-->

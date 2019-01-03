@@ -1,0 +1,213 @@
+<!--START: LEFT_BAR_BLOCKS-->
+<!--START: FRAME_MANUFACTURER-->
+<div id="modManufacturer" class="sidebar-widget">
+	<h4 class="widget-header">[frame_manufacturer]</h4>
+	<div class="widget-body">
+		<form name="mfg" id="mfg" method="get" action="search_groups.asp">
+			<div class="manf-select">
+				<select name="manf" onchange="this.form.submit();" class="form-control">
+					<option value="0" selected="selected">[frame_manufacturer]</option>
+					<!--START: manufacturer_format-->
+					<option value="[mfgid]">[manufacturer]</option>
+					<!--END: manufacturer_format-->
+				</select>
+			</div>
+		</form>
+	</div>
+</div>
+<!--END: FRAME_MANUFACTURER-->
+
+<!--START: FRAME_CATEGORY-->
+<div class="sidebar-widget">
+	<h4 class="widget-header">[frame_categories]</h4>
+	<nav id="categories-outer" class="widget-body">
+		<ul id="categories" class="sidebarUL">
+			<!--START: CATEGORIES-->
+			<li class="[dropdown_class]">
+				<!--START: CATEGORY_FORMAT-->
+				<a href="view_category.asp?cat=CATID">CATEGORY</a>
+				<!--END: CATEGORY_FORMAT-->
+				<!--START: SUB_CATEGORIES-->
+				<ul class="dropdown-menu animated">
+					<!--START: SUB_CATEGORY_FORMAT-->
+					<li class=""><a href="view_category.asp?cat=CATID" class="subcat">CATEGORY</a></li>
+					<!--END: SUB_CATEGORY_FORMAT-->
+				</ul>
+				<!--END: SUB_CATEGORIES-->
+			</li>
+			<!--END: CATEGORIES-->
+		</ul>
+	</nav>
+</div>
+<!--END: FRAME_CATEGORY-->
+
+<!--START: FRAME_BYPRICE-->
+<div id="modPrice" class="sidebar-widget">
+	<h4 class="widget-header">[frame_byprice]</h4>
+	<div class="widget-body">
+		<ul class="sidebarUL">
+			<!--START: byprice_format-->
+			<li><a href="search_groups.asp?keyword=[id]&byprice=[id]">[title]</a></li>
+			<!--END: byprice_format-->
+		</ul>
+	</div>
+</div>
+<!--END: FRAME_BYPRICE-->
+
+<!--START: NEW_RELEASES_BLOCK-->
+<div id="modNewReleases" class="sidebar-widget">
+	<h4 class="widget-header">[frame_new-releases]</h4>
+	<div class="widget-body">
+		<!--START: newreleases-->
+		<!--START: newreleases_topitem-->
+		<div class="new-release-item new-releases-item-first product-item">
+			<div class="row">
+				<div class="col-xs-4">
+					<div class="img"><a href="product.asp?itemid=[catalogid]"><img src="[thumbnail]" alt="[name]" class="img-responsive" /></a></div>
+				</div>
+				<div class="col-xs-8">
+					<div class="info">
+						<div class="name"><a href="product.asp?itemid=[catalogid]" class="link">[name]</a></div>
+				
+						<!--START: freeshippingblock-->
+						<div class="status">
+							<span class="freeshipping">[freeshipping]</span>
+						</div>
+						<!--END: freeshippingblock-->
+
+						<div class="price">
+							<!--START: ITEMPRICE-->
+							<span class="regular-price">[ITEMPRICE]</span>
+							<!--END: ITEMPRICE-->
+							<!--START: SALEPRICE-->
+							<del class="regular-price">[ITEMPRICE]</del>
+							<span class="sale-price">[ITEMSALEPRICE]</span>
+							<!--END: SALEPRICE-->
+						</div>
+
+						<!--START: product_review_average-->
+						<div class="reviews">
+							<span class="reviews-stars rating-[review_average]"></span> <span class="reviews-count">([review_count])</span>
+						</div>
+						<!--END: product_review_average-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--END: newreleases_topitem-->
+
+		<!--START: newreleases_item-->
+		<div class="new-release-item product-item">
+			<div class="row">
+				<div class="col-xs-4">
+					<div class="img"><a href="product.asp?itemid=[catalogid]"><img src="[thumbnail]" alt="[name]" class="img-responsive" /></a></div>
+				</div>
+				<div class="col-xs-8">
+					<div class="info">
+						<div class="name"><a href="product.asp?itemid=[catalogid]" class="link">[name]</a></div>
+				
+						<!--START: freeshippingblock-->
+						<div class="status">
+							<span class="freeshipping">[freeshipping]</span>
+						</div>
+						<!--END: freeshippingblock-->
+
+						<div class="price">
+							<!--START: ITEMPRICE-->
+							<span class="regular-price">[ITEMPRICE]</span>
+							<!--END: ITEMPRICE-->
+							<!--START: SALEPRICE-->
+
+							<del class="regular-price">[ITEMPRICE]</del>
+							<span class="sale-price">[ITEMSALEPRICE]</span>
+							<!--END: SALEPRICE-->
+						</div>
+
+						<!--START: product_review_average-->
+						<div class="reviews">
+							<span class="reviews-stars rating-[review_average]"></span> <span class="reviews-count">([review_count])</span>
+						</div>
+						<!--END: product_review_average-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--END: newreleases_item-->
+		<!--END: newreleases-->
+	</div>
+</div>
+<!--END: NEW_RELEASES_BLOCK-->
+
+<!--START: TOP_SELLERS_BLOCK-->
+<div id="modTopSellers" class="sidebar-widget">
+	<h4 class="widget-header">[frame_top-sellers]</h4>
+	<div class="widget-body">
+		<!--START: topsellers-->
+		<!--START: topsellers_topitem-->
+		<div class="topsellers-item topsellers-item-first product-item">
+			<div class="img">
+				<a href="product.asp?itemid=[catalogid]"><img src="[thumbnail]" alt="[name]" class="img-responsive" /></a>
+			</div>
+			<div class="info">
+				<div class="name"><a href="product.asp?itemid=[catalogid]" class="link">[name]</a></div>
+
+				<div class="price">
+					<!--START: ITEMPRICE-->
+					<span class="regular-price">[ITEMPRICE]</span>
+					<!--END: ITEMPRICE-->
+					<!--START: SALEPRICE-->
+					<del class="regular-price">[ITEMPRICE]</del>
+					<span class="sale-price">[ITEMSALEPRICE]</span>
+					<!--END: SALEPRICE-->
+				</div>
+
+				<!--START: product_review_average-->
+				<div class="reviews">
+					<span class="reviews-stars rating-[review_average]"></span> <span class="reviews-count">([review_count])</span>
+				</div>
+				<!--END: product_review_average-->
+			</div>
+		</div>
+		<!--END: topsellers_topitem-->
+
+		<!--START: topsellers_item-->
+		<div class="new-release-item product-item">
+			<div class="row">
+				<div class="col-xs-4">
+					<div class="img"><a href="product.asp?itemid=[catalogid]"><img src="[thumbnail]" alt="[name]" class="img-responsive" /></a></div>
+				</div>
+				<div class="col-xs-8">
+					<div class="info">
+						<div class="name"><a href="product.asp?itemid=[catalogid]" class="link">[name]</a></div>
+
+						<div class="price">
+							<!--START: ITEMPRICE-->
+							<span class="regular-price">[ITEMPRICE]</span>
+							<!--END: ITEMPRICE-->
+							<!--START: SALEPRICE-->
+							<del class="regular-price">[ITEMPRICE]</del>
+							<span class="sale-price">[ITEMSALEPRICE]</span>
+							<!--END: SALEPRICE-->
+						</div>
+
+						<!--START: product_review_average-->
+						<div class="reviews">
+							<span class="reviews-stars rating-[review_average]"></span> <span class="reviews-count">([review_count])</span>
+						</div>
+						<!--END: product_review_average-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--END: topsellers_item-->
+
+		<!--END: topsellers-->
+	</div>
+    
+</div>
+<!--END: TOP_SELLERS_BLOCK--> 
+
+<!--START: LEFT_BANNER-->
+<div id="leftBanner" class="sidebar-widget">[LEFT_BANNER]</div>
+<!--END: LEFT_BANNER--> 
+<!--END: LEFT_BAR_BLOCKS-->

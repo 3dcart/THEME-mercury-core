@@ -1,0 +1,393 @@
+<section id="category" class="category-page-content page-content">
+	<!--START: BODY_HEADER-->
+	<section class="breadcrumnb">
+		<ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+			[breadcrumb_items]
+		</ol>
+	</section>
+	<!--END: BODY_HEADER-->
+
+
+	<section class="page_header">
+		<h1 class="page_heading">[categoryname]</h1>
+		<!--START: CATEGORY_HEADER-->
+		<div class="category-header">[CONTENT]</div>
+		<!--END: CATEGORY_HEADER--> 
+	</section>
+
+	<!--START: SUB_CATEGORIES_SECTION-->
+	<section class="subcategories_block">
+		<div class="subcategories">
+			<!--START: SUB_CATEGORIES_FORMAT-->
+			<li>
+				<a href="view_category.asp?cat=[CATID]">
+					<!--START: SUB_CATEGORY_IMAGE-->
+					<span class="category-img"><img src="[SUB_CATEGORY_IMAGE]" alt="[SUB_CATEGORY_NAME]" /></span>
+					<!--END: SUB_CATEGORY_IMAGE--> 
+					<!--START: SUB_CATEGORY_NAME-->
+					<span class="name">[SUB_CATEGORY_NAME]</span>
+					<!--START: SUB_CATEGORY_NAME-->
+				</a>
+			</li>
+			<!--END: SUB_CATEGORIES_FORMAT-->
+		</div>
+	</section>
+	<!--END: SUB_CATEGORIES_SECTION-->
+
+	<!--START: FEATURE_MENU-->
+	<section id="featureBlock" class="category-products">
+		<h2 class="titles">[category_Header-specials]</h2>
+		<!--START: FEATURE_ITEMS-->
+		<div class="product-items product-items-[product-cols-number]">
+			<!--START: FEATURE_ITEM_TEMPLATE_0-->
+			[product_items]
+			<!--END: FEATURE_ITEM_TEMPLATE_0-->
+		</div>
+		<!--END: FEATURE_ITEMS-->
+	</section>
+	<!--END: FEATURE_MENU-->
+
+	<!--START: ITEMS-->
+	<section class="category-products">
+		<form action="view_category.asp?cat=[catid]" method="post" name="frmsortby" id="frmsortby">
+			<div class="row">
+				<div class="col-sm-6">
+					<h2 class="titles">[category_Header-products] [[productnumber]]</h2>
+				</div>
+				<div class="col-sm-6">
+					<!--START: sortbylist-->
+					<div class="sort-by">
+						<span>[category_sort-by-label]:</span>
+						<select id="sortby" name="sortby">
+							<option value="0">[category_sort-by-default]</option>
+							[sortbylist]
+						</select>
+					</div>
+					<!--END: sortbylist-->
+				</div>
+			</div>
+
+			<div class="category-actions clearfix">
+
+				<div class="paging"> 
+				<!--START: PAGING--> 
+				<!--START: PREV--> 
+				<a href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=[prev]">[category_previouspage]</a> 
+				<!--END: PREV--> 
+				<!--START: PAGES--> 
+				<!--START: FIRST_PAGE--> 
+				<a class="paging-links" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a><span class="paging-dots">...</span> 
+				<!--END: FIRST_PAGE--> 
+				<!--START: PAGES_SELECTED--> 
+				<strong>PAGE</strong> 
+				<!--END: PAGES_SELECTED--> 
+				<!--START: PAGES_NOTSELECTED--> 
+				<a class="paging-links" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a> 
+				<!--END: PAGES_NOTSELECTED--> 
+				<!--START: LAST_PAGE--> 
+				<span class="paging-dots">...</span><a class="paging-links" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a> 
+				<!--END: LAST_PAGE--> 
+				<!--END: PAGES--> 
+				<!--START: NEXT--> 
+				<a href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=[next]">[category_nextpage]</a> <a href="view_category.asp?viewall=1&cat=[catid]" class="category-viewall">View All</a> 
+				<!--END: NEXT--> 
+				<!--END: PAGING--> 
+				<!--START: UNDOVIEWALL--> 
+				<a class="paging-links" href="view_category.asp?viewall=0&cat=[catid]">Exit View All</a> 
+				<!--END: UNDOVIEWALL--></div>
+			</div>
+
+
+			<!--START: catFilterMainBlock-->
+			<div id="filtersBlock" class="catFilters">
+				<!--START: catFilter-->
+				<div class="selected-filters">
+					<div class="filters-label">[category_Header-Filters]</div>
+					<div class="filters-container">
+						<ul class="list-unstyled list-inline">
+							<!--START: catFilterCrumb-->
+							<!--START: catFilterCrumbItem-->
+							<li><a href="#" onclick="javascript:setCatFilter('[strFilter]', document.frmsortby, true);">[strfiltername]</a></li>
+							<!--END: catFilterCrumbItem-->
+							<!--END: catFilterCrumb-->
+						</ul>
+						<!--START: catFilterRemoveLink-->
+						<div class="remove-filter">
+							<a href="#" onclick="javascript:removeCatFilter();">
+								<span class="icon-cancel"></span> [category_Header-RemoveFilters]	
+							</a>
+						</div>
+						<!--END: catFilterRemoveLink-->
+						<div class="clear"></div>
+					</div>
+				</div>
+				<!--END: catFilter-->
+
+				<div class="form-group">
+					<!--START: catFilter_Filter-->
+					<label class="cat-filters">
+						<label>[catFilterName]</label>
+						<select class="form-control" name="catFilter" onchange="setCatFilter(this.value, document.frmsortby, false);">
+							<option value=""></option>
+							<!--START: catFilter_Filter_Item-->
+							<option value="[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-">[catFilterChildName] ([numItems])</option>
+							<!--END: catFilter_Filter_Item-->
+						</select>
+					</label>
+					<!--END: catFilter_Filter-->
+				</div>
+
+				<input type="hidden" name="hdnCatFilter" id="hdnCatFilter" value="[catFilter]" />
+				<div class="clear"></div>
+			</div>
+			<!--END: catFilterMainBlock-->
+		</form>
+
+		<!--START: CATEGORY_ITEMS-->
+		<div class="product-items product-items-[product-cols-number]">
+			<!--START: ITEM_TEMPLATE_0-->
+			[product_items]
+			<!--END: ITEM_TEMPLATE_0-->
+
+			<!--START: ITEM_TEMPLATE_1-->
+			<div class="product-item product-item-liststyle" data-catalogid="[catalogid]" data-ajaxcart="1" data-addcart-callback="addcart_callback">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="name">
+							<a href="product.asp?itemid=[catalogid]">[name]</a>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="price">
+							<!--START: ITEMPRICE-->
+							<span class="regular-price">[ITEMPRICE]</span>
+							<!--END: ITEMPRICE-->
+							<!--START: SALEPRICE-->
+							<del class="regular-price">[ITEMPRICE]</del>
+							<span class="sale-price">[ITEMSALEPRICE]</span>
+							<span class="on-sale-badge">[product_sale]</span>
+							<!--END: SALEPRICE-->
+						</div>
+
+						<!--START: addtocart-->
+						<div class="action">
+							<a href="add_cart.asp?quick=1&amp;item_id=[catalogid]" class="add-to-cart btn btn-default">
+								<span class="buyitlink-text">[category_buyitlink]</span>
+								<span class="ajaxcart-loader icon-spin2 animate-spin"></span>
+								<span class="ajaxcart-added icon-ok"></span>
+							</a>
+						</div>
+						<!--END: addtocart-->
+					</div>
+				</div>
+			</div>
+			<!--END: ITEM_TEMPLATE_1-->
+
+			<!--START: ITEM_TEMPLATE_2-->
+			<div class="product-item product-item-thumbstyle" data-catalogid="[catalogid]" data-ajaxcart="1" data-addcart-callback="addcart_callback">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="img">
+							<a href="product.asp?itemid=[catalogid]">
+								<img src="[THUMBNAIL]" alt="[name]" class="img-responsive" />
+							</a>
+							<!--START: quickview-->
+							<button class="quickview" data-toggle="modal">[product_quick-view]</button>
+							<!--END: quickview-->
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="name">
+							<a href="product.asp?itemid=[catalogid]">[name]</a>
+						</div>
+						<div class="price">
+							<!--START: ITEMPRICE-->
+							<span class="regular-price">[ITEMPRICE]</span>
+							<!--END: ITEMPRICE-->
+							<!--START: SALEPRICE-->
+							<del class="regular-price">[ITEMPRICE]</del>
+							<span class="sale-price">[ITEMSALEPRICE]</span>
+							<span class="on-sale-badge">[product_sale]</span>
+							<!--END: SALEPRICE-->
+						</div>
+
+						<!--START: addtocart-->
+						<div class="action">
+							<a href="add_cart.asp?quick=1&amp;item_id=[catalogid]" class="add-to-cart btn btn-default">
+								<span class="buyitlink-text">[category_buyitlink]</span>
+								<span class="ajaxcart-loader icon-spin2 animate-spin"></span>
+								<span class="ajaxcart-added icon-ok"></span>
+							</a>
+						</div>
+						<!--END: addtocart-->
+					</div>
+				</div>
+			</div>
+			<!--END: ITEM_TEMPLATE_2-->
+
+
+		</div>
+		<!--END: CATEGORY_ITEMS-->
+
+		<div class="bottom_breadcrumb">
+			<div class="paging"> 
+				<!--START: PAGING--> 
+				<!--START: PREV--> 
+				<a href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=[prev]">[category_previouspage]</a> 
+				<!--END: PREV--> 
+				<!--START: PAGES--> 
+				<!--START: FIRST_PAGE--> 
+				<a class="paging-links" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a><span class="paging-dots">...</span> 
+				<!--END: FIRST_PAGE--> 
+				<!--START: PAGES_SELECTED--> 
+				<strong>PAGE</strong> 
+				<!--END: PAGES_SELECTED--> 
+				<!--START: PAGES_NOTSELECTED--> 
+				<a class="paging-links" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a> 
+				<!--END: PAGES_NOTSELECTED--> 
+				<!--START: LAST_PAGE--> 
+				<span class="paging-dots">...</span><a class="paging-links" href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=PAGE">PAGE</a> 
+				<!--END: LAST_PAGE--> 
+				<!--END: PAGES--> 
+				<!--START: NEXT--> 
+				<a href="view_category.asp?cat=[cat]&amp;sortby=[sortby]&amp;page=[next]">[category_nextpage]</a> <a href="view_category.asp?viewall=1&cat=[catid]" class="category-viewall">View All</a> 
+				<!--END: NEXT--> 
+				<!--END: PAGING--> 
+				<!--START: UNDOVIEWALL--> 
+				<a class="paging-links" href="view_category.asp?viewall=0&cat=[catid]">Exit View All</a> 
+				<!--END: UNDOVIEWALL--></div>
+		</div>
+	</section>
+	<!--END: ITEMS-->
+
+	<!--START: CATEGORY_FOOTER-->
+	<div class="category-footer">
+		[CONTENT]
+	</div>
+	<!--END: CATEGORY_FOOTER-->
+</section>
+
+<!--START: browsing_history-->
+<section class="browsing_historyBlock">
+    <div class="container">
+    	<div class="header">
+    		<h3>[product_browsing-history-header]</h3>
+    	</div>
+    	<div class="product-carousel flexslider">
+			<!--START: browsing_history_items-->
+    		<ul class="product-items product-items-[product-cols-number] slides">
+    			<!--START: browsing_history_item-->
+    			<li class="product-item" data-catalogid="[catalogid]" data-ajaxcart="1" data-addcart-callback="addcart_callback">
+    				<div class="img">
+    					<a href="product.asp?itemid=[catalogid]">
+    						<img src="[THUMBNAIL]" alt="[name]" class="img-responsive" />
+    					</a>
+    					<!--START: quickview-->
+                        <button class="quickview" data-toggle="modal">Quick View</button>
+    					<!--<button class="quickview" data-toggle="modal">Quick View</button>-->
+    					<!--END: quickview-->
+    				</div>
+    				<div class="name">
+    					<a href="product.asp?itemid=[catalogid]">[name]</a>
+    				</div>
+
+    				<div class="price">
+    					<!--START: ITEMPRICE-->
+    					<span class="regular-price">[ITEMPRICE]</span>
+    					<!--END: ITEMPRICE-->
+    					<!--START: SALEPRICE-->
+    					<del class="regular-price">[ITEMPRICE]</del>
+    					<span class="sale-price">[ITEMSALEPRICE]</span>
+    					<span class="on-sale-badge">[product_sale]</span>
+    					<!--END: SALEPRICE-->
+    				</div>
+
+    				<div class="reviews">
+    					<!--START: product_review-->
+    					<!--START: product_review_average-->
+    					<span class="reviews-stars rating-[review_average]"></span> <span class="reviews-count">([review_count])</span>
+    					<!--END: product_review_average-->
+    					<!--END: product_review-->
+    				</div>
+
+					<!--START: addtocart-->
+    				<div class="action">
+    					<a href="add_cart.asp?quick=1&amp;item_id=[catalogid]" class="add-to-cart btn btn-default">
+    						<span class="buyitlink-text">[category_buyitlink]</span>
+    						<span class="ajaxcart-loader icon-spin2 animate-spin"></span>
+    						<span class="ajaxcart-added icon-ok"></span>
+    					</a>
+    				</div>
+					<!--END: addtocart-->
+    			</li>
+    			<!--END: browsing_history_item-->
+    		</ul>
+			<!--END: browsing_history_items-->
+    	</div>
+    </div>
+</section>
+<!--END: browsing_history-->
+
+<!--START: PRODUCT_COMPARE-->
+<!--START: CompareProduct-->
+<div id="resultCompare" class="flexbox"></div>
+<!--END: CompareProduct-->
+
+<div id="divAdd" name="divAdd" class="alert-notice" style="display: none; ">
+    <!-- Alerts Basket -->
+    <div class="i-section">
+        <div class="col-md-12" id="comparepopup">
+            <h2>[productcompare_product-added]</h2>
+        </div>
+    </div>
+    <div class="i-section">
+        <div class="col-md-12" id="compareduplicate" hidden="hidden">
+            <h2>[productcompare_product-duplicate]</h2>
+        </div>
+    </div>
+    <div class="i-section">
+        <div class="col-md-12" id="comparelimit" hidden="hidden">
+            <h2>[productcompare_product-limit]</h2>
+        </div>
+    </div>
+</div>
+<div id="divcomparepopup" name="divComparePopup" style="display: none;">
+    <form action="product_compare.asp" method="post" name="addcompare" id="addcompare">
+        <div id="compare-basket" class="compare-basket">
+            <div id="comparepopupbuttons">
+                <div class="button--actions" style="display: none">
+                    <input type="button" id="btnOK" class="btn btn-default btn-save modalCloseImg" value="OK" />
+                </div>
+                <div class="button--actions">
+                <button id="btnCompareNow" onclick="javascript: redirectCookie();" class="action action--button action--compare">
+                    <i class="fa fa-check"></i><span class="action__text">Compare</span>
+                </button>
+                </div>
+				<div class="button--actions">
+                    <input type="button" id="btnClear" onclick="javascript: emptyBasket();" value="Clear List" class="btn btn-default" />
+                </div>
+                <div class="button--actions" style="display: none">
+                    <input type="button" id="btnCancel" hidden="hidden" class="btn btn-default modalCloseImg" value="Cancel" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<!--END: PRODUCT_COMPARE-->
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/lib/flexslider/jquery.flexslider-min.js"></script>
+<!--START: PRODUCT_COMPARE_SCRIPTS-->
+<script type="text/javascript" src="/assets/templates/common-html5/js/product_compare.js"></script>
+<script type="text/javascript">
+    checkCategoryChange([catid]);
+</script>
+<!--END: PRODUCT_COMPARE_SCRIPTS-->
+<script type="text/javascript" src="/assets/templates/common-core/js/category.js"></script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/lib/flexslider/flexslider.css" type="text/css" media="screen" />
+<!--START: PRODUCT_COMPARE_STYLES--><link rel="stylesheet" href="/assets/templates/common-html5/css/product_compare.css" type="text/css" media="all" /><!--END: PRODUCT_COMPARE_STYLES-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/category.css" type="text/css" media="screen" />
+<!--END: template_styles-->
