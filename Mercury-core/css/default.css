@@ -1,6 +1,22 @@
 /*
 ** Bootstrap over-rides
 */
+
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+.page-content, #mainContent {
+  flex: 1 0 auto;
+}
+footer {
+  flex-shrink: 0;
+}
+
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-family: 'Poppins', sans-serif;
