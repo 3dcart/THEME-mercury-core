@@ -2488,7 +2488,7 @@ body.view-cart span.itemoptions {
 body.view-cart #leftBar, body.my-account #leftBar {
 	display: none;
 }
-body.view-cart .middle-grid, body.my-account .middle-grid {
+body.view-cart .middle-grid, body.my-account .middle-grid, body.view-cart #midCol, body.my-account #midCol {
 	width: 100%;
 }
 
