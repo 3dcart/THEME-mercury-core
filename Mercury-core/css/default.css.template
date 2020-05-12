@@ -2497,6 +2497,8 @@ body.view-cart #leftBar, body.my-account #leftBar {
 }
 body.view-cart .middle-grid, body.my-account .middle-grid, body.view-cart #midCol, body.my-account #midCol {
 	width: 100%;
+	max-width: none;
+	padding: 0;
 }
 
 
