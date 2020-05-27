@@ -266,7 +266,7 @@ function sticky_header() {
 	//console.log(shrinkHeader);
 	var header_height = $('.categoriesNav').innerHeight();
 
-	scroll_activity();
+	//scroll_activity();
 /*
 	if (window.innerWidth < 768) {
 	}
