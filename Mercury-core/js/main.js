@@ -266,15 +266,10 @@ function sticky_header() {
 	//console.log(shrinkHeader);
 	var header_height = $('.categoriesNav').innerHeight();
 
-	//scroll_activity();
-/*
-	if (window.innerWidth < 768) {
+	
+	if (window.innerWidth < 767) {
+		scroll_activity();
 	}
-	else {
-		$('.site-header').removeClass('stuck');
-		$('body').css('padding-top' , 0);
-	}
-*/
 }
 
 function scroll_activity() {
