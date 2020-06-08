@@ -67,18 +67,21 @@
 	<!--START: FEATURE_MENU-->
     <section class="products-section">
         <div class="container">
-           	<div class="row">
-				<h2 class="header-specials"><span>[category_Header-specials]</span></h2>
-	        </div>
-			<!--START: CATEGORY_ITEMS-->
-			<div class="product-items product-items-[product-cols-number]">
-				<div id="carousel-sellers" class="carousel slide">
+            
+            <h2 class="header-specials"><span>[category_Header-specials]</span></h2>
+
+			<div class="product-carousel flexslider">
+				<!--START: CATEGORY_ITEMS-->
+				<ul class="product-items slides" data-productcols="[product-cols-number]" >
 					<!--START: ITEM_TEMPLATE_0-->
+					<li>
 					[product_items]
+					</li>
 					<!--END: ITEM_TEMPLATE_0-->
-				</div>
+				</ul>
+				<!--END: CATEGORY_ITEMS-->
 			</div>
-			<!--END: CATEGORY_ITEMS-->
+            
         </div>
     </section>
 	<!--END: FEATURE_MENU-->
@@ -94,6 +97,49 @@
 			</div>
 		</div>
 	</section>
+	
+	<!--START: HOMEPAGE_BLOGS-->
+	<div class="homepage-blog-posts products-section">
+		<div class="container">
+            <h2 class="header-specials"><span>[blog_recentposts]</span></h2>
+			<ul class="blogList clearfix">
+				<!--START: blog_post-->
+				<li class="blogPost [blog_class]">
+					<!--START: post_image-->
+					<div class="post-image">
+						<div class="post-image-container">
+							<a href="[pagename]" title="[subject]">  
+								<img src="[post_image]" alt="[subject]" class="img-responsive" />
+							</a>
+						</div>
+					</div>			            
+					<!--END: post_image-->
+					<div class="post-content">
+						<!--START: post_title-->
+						<h3><a href="[pagename]" title="[subject]">[subject]</a></h3>
+						<!--END: post_title-->
+
+						<div id="postContent" class="post" data-articleID="[post_id]">
+							[post]
+						</div>
+
+						<div class="post-info clearfix">
+							<div class="postDate">
+								[post_date]
+							</div>
+							<!--START: read-more-->
+							<div class="post-readmore">
+								<a href="[pagename]" title="[subject]" class="btn btn-default">[blog_read-more]</a>
+							</div>
+							<!--END: read-more-->
+						</div>
+					</div>
+				</li>
+				<!--END: blog_post-->
+			</ul>
+		</div>
+	</div>
+    <!--END: HOMEPAGE_BLOGS-->
 
 	<!--START: CATEGORY_FOOTER-->
     <section class="category-footer content-section">
@@ -117,9 +163,56 @@
             keyboard: false
         });
     });
+	jQuery(function () {
+		
+		// Product Scroll
+		// store the slider in a local variable
+		var $window = jQuery(window),
+			flexslider = { vars: {} };
+
+		// tiny helper function to add breakpoints
+		function getGridSize() {
+			var proCol = jQuery(".product-carousel > ul.slides").attr("data-productcols");
+			return (window.innerWidth <= 567) ? 1 :
+				   (window.innerWidth < 992) ? 2 : proCol;
+		}
+
+		$window.on("load", function () {
+			jQuery('.product-carousel').flexslider({
+				animation: "slide",
+				controlNav: false,
+				keyboard: false,
+				itemWidth: 210,
+				itemMargin: 0,
+				minItems: getGridSize(), // use function to pull in initial value
+				maxItems: getGridSize() // use function to pull in initial value
+
+			});
+			
+			setTimeout(function () {
+				window.dispatchEvent(new Event('resize'));
+			}, 100);
+		});
+
+		// check grid size on resize event
+		$window.resize(function () {
+			var gridSize = getGridSize();
+
+			flexslider.vars.minItems = gridSize;
+			flexslider.vars.maxItems = gridSize;
+
+		});
+		jQuery(document).ready(function(){
+			setTimeout(function () {
+				window.dispatchEvent(new Event('resize'));
+			}, 1000);
+		});
+		
+	}());
 </script>
 <!--END: template_scripts-->
 
 <!--START: template_styles-->
 <link rel="stylesheet" href="/assets/templates/common-core/lib/flexslider/flexslider.css" type="text/css" media="screen" />
+<link href="assets/templates/common-core/lib/contentbuilder/minimalist-blocks/content.min.css" rel="stylesheet" type="text/css" />
 <!--END: template_styles-->

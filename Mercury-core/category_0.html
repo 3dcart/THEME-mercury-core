@@ -48,10 +48,28 @@
 	<!--END: FEATURE_MENU-->
 
 	<!--START: ITEMS-->
-	<section class="category-products">
+	<section class="category-products clearfix">
 		<form action="view_category.asp?cat=[catid]" method="post" name="frmsortby" id="frmsortby">
-			<div class="row">
-				<div class="col-sm-6">
+			<div class="row category-toolbar">
+				<div class="col-sm-6 clearfix">
+					<!--START: category_view_switch-->
+					<div class="view-as-btn">
+						<a href="javascript:void(0);" id="grid-view" title="Grid View" class="current-view">
+							<div>
+								<div class="icon-bar"></div>
+								<div class="icon-bar"></div>
+								<div class="icon-bar"></div>
+							</div>
+						</a>
+						<a href="javascript:void(0);" id="list-view" title="List View" class="">
+							<div>
+								<div class="icon-bar"></div>
+								<div class="icon-bar"></div>
+								<div class="icon-bar"></div>
+							</div>
+						</a>
+					</div>
+					<!--END: category_view_switch-->
 					<h2 class="titles">[category_Header-products] [[productnumber]]</h2>
 				</div>
 				<div class="col-sm-6">
@@ -97,7 +115,6 @@
 				<!--END: UNDOVIEWALL--></div>
 			</div>
 
-
 			<!--START: catFilterMainBlock-->
 			<div id="filtersBlock" class="catFilters">
 				<!--START: catFilter-->
@@ -141,6 +158,49 @@
 				<div class="clear"></div>
 			</div>
 			<!--END: catFilterMainBlock-->
+
+			<!--START: catFilterMainBlock_enhanced-->
+			<div id="filtersEnhancedBlock">
+				<!--START: catFilter_enhanced-->
+				<div class="selected-filters-enhanced">
+					<h5>[category_Header-Filters]</h5>
+					<div class="container">
+						<ul>
+							<!--START: catFilterCrumb_enhanced-->
+							<!--START: catFilterCrumbItem_enhanced-->
+							<input type="hidden" name="hdnFilterCrumb-[id]" id="hdnFilterCrumb-[id]" value="[strFilter]" />
+							<li><a href="#" onclick="javascript: setCatFilterEnhanced([id]);">[strfiltername]</a> <a class="crumb-item-remove-enhanced" href="#" onclick="javascript:removeCatFilterEnhanced([id]);">x</a></li>
+							<!--END: catFilterCrumbItem_enhanced-->
+							<!--END: catFilterCrumb_enhanced-->
+						</ul>
+						<!--START: catFilterRemoveLink_enhanced-->
+						<div class="remove-filter-enhanced"><a href="#" onclick="javascript:window.location.href = window.location.href.split('?')[0];">[category_Header-RemoveFilters]</a></div>
+						<!--END: catFilterRemoveLink_enhanced-->
+						<div class="clear"></div>
+					</div>
+				</div>
+				<!--END: catFilter_enhanced-->
+				<!--START: catFilter_Filter_enhanced-->
+				<div class="cat-filters-enhanced">
+					<div>
+						<h5>[catFilterName]</h5>
+						<ul>
+							<!--START: catFilter_Filter_Item_enhanced-->
+							<li><a href="[catFilterLink]" [catFilterLinkRel]>[catFilterChildName] ([numItems])</a></li>
+							<!--END: catFilter_Filter_Item_enhanced-->
+						</ul>                   
+					</div>
+				</div>
+				<!--END: catFilter_Filter_enhanced-->
+				<input type="hidden" name="hdnCatFilterEnhancedEnabled" id="hdnCatFilterEnhancedEnabled" value="[hdnCatFilterEnhancedEnabled]" />
+				<input type="hidden" name="hdnCatId" id="hdnCatId" value="[hdnCatId]" />
+				<input type="hidden" name="hdnPageNumber" id="hdnPageNumber" value="[hdnPageNumber]" />            
+				<input type="hidden" name="hdnQueryString" id="hdnQueryString" value="[hdnQueryString]" />
+				<input type="hidden" name="hdnNumberOfPages" id="hdnNumberOfPages" value="[hdnNumberOfPages]" />                           
+				<div class="clear"></div>
+			</div>
+			<!--END: catFilterMainBlock_enhanced-->                        
+
 		</form>
 
 		<!--START: CATEGORY_ITEMS-->

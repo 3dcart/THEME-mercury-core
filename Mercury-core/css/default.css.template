@@ -2,19 +2,32 @@
 ** Bootstrap over-rides
 */
 
-html, body {
-  height: 100%;
+.homepage-blog-posts .post-image-container img {
+    height: 205px;
 }
-body {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
+.product-items.productList .product-item .img a {
+    position: initial;
 }
-.page-content, #mainContent {
-  flex: 1 0 auto;
+.product-items.productList .product-item .img {
+    border: 1px solid #ececec;
 }
-footer {
-  flex-shrink: 0;
+.product-items.productList .product-item .product-content {
+    text-align: left;
+}
+.product-items.productList .product-item .action .btn {
+    min-width: 150px;
+    width: auto;
+}
+@media (max-width: 991px){
+.product-items.productList .product-item .img {
+    padding-right: 0;
+    width: 32%;
+}
+}
+@media(max-width:767px){
+	.homepage-blog-posts .post-image-container img {
+		height: 205px;
+	}
 }
 
 body {
