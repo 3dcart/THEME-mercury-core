@@ -1342,7 +1342,10 @@ ul.extrapages li a {
 .mailinglist-submit i{
     font-size: 18px;
 }
-@media (min-width: 768px) {    
+@media (min-width: 768px) {
+    .mailinglist-submit {
+        font-size: 0px;
+    }
     .mailinglist-submit i{
         display: block;
     }
