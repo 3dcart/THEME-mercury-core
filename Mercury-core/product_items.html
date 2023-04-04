@@ -1,7 +1,7 @@
 <div class="product-item" data-catalogid="[catalogid]" data-ajaxcart="1" data-addcart-callback="addcart_callback">
     <div class="img">
         <a href="product.asp?itemid=[catalogid]">
-            <img src="[THUMBNAIL]" alt="[name]" class="img-responsive" />
+            <img src="/cdn-cgi/image/format=auto/[THUMBNAIL]" alt="[imagecaption1]" class="img-responsive" width="340" height="280" />
         </a>
         <!--START: quickview-->
         <button class="quickview" data-toggle="modal">[product_quick-view]</button>
@@ -23,12 +23,12 @@
 
     <div class="price">
         <!--START: ITEMPRICE-->
-        <span class="regular-price" aria-label="regular price">[ITEMPRICE]</span>
+        <span class="regular-price">[ITEMPRICE]</span>
         <!--END: ITEMPRICE-->
         <!--START: SALEPRICE-->
-        <del class="regular-price" aria-label="regular price">[ITEMPRICE]</del>
-        <span class="sale-price" aria-label="sale price">[ITEMSALEPRICE]</span>
-        <span class="on-sale-badge" aria-label="sale badge">[product_sale]</span>
+        <del class="regular-price">[ITEMPRICE] <span class="sr-only">Original price</span></del>
+        <span class="sale-price">[ITEMSALEPRICE]</span>
+        <span class="on-sale-badge">[product_sale]</span>
         <!--END: SALEPRICE-->
     </div>
 
@@ -43,12 +43,59 @@
 
 	<!--START: addtocart-->
     <div class="action">
-        <a href="add_cart.asp?quick=1&amp;item_id=[catalogid]" class="add-to-cart btn btn-default">
-            <span class="buyitlink-text" aria-label="buy link text">[category_buyitlink]</span>
+        <a href="add_cart.asp?quick=1&amp;item_id=[catalogid]&amp;cat_id=[cat_id]" class="add-to-cart btn btn-default">
+            <span class="buyitlink-text">[category_buyitlink]</span>
             <span class="ajaxcart-loader icon-spin2 animate-spin"></span>
             <span class="ajaxcart-added icon-ok"></span>
+            <span class="sr-only">Add to Cart</span>
         </a>
     </div>
 	<!--END: addtocart-->
+
+    <!--START: addtowishlist-->
+    <div class="addtowishlist">
+        <a href="#" class="btn btn-link addtowishlist-item" role="button"><i class="icon-heart" role="presentation"></i> [product_addtowishlist]</a>
+    </div>
+    <!--END: addtowishlist-->
+
+    <!--START: previouslybought-->
+    <div id="divPrevMessage_[catalogid]" style="display: none; margin-bottom:15px;">
+        <em>You previously purchased this item on&nbsp;<span id="spnPrevPurchDate_[catalogid]"></span></em>
+        <br /><a href="" id="lnkPrevPurchOrderTracking_[catalogid]">View this order</a>
+    </div>
+    <script>
+        if ("[userid_enc]" != "") {				
+            setTimeout("checkPrevPurch('[userid_enc]','[catalogid]');", 500);
+        }
+    </script>
+    <!--END: previouslybought-->
+
 	</div>
 </div>
+
+<!--START: previouslybought_scripts-->
+<script>
+	function checkPrevPurch(userId, caId) {
+
+		jQuery.ajax({
+			url: 'ajaxPrevPurch.asp',
+			dataType: 'json',
+			type: 'get',
+			data: 'cu=' + userId + '&ca=' + caId,
+			cache: false,
+			success: function(strResult) {
+				if (strResult.trackinglink != '') {
+					jQuery("#lnkPrevPurchOrderTracking_" + String(caId)).attr("href", strResult.trackinglink);
+					jQuery("#divPrevMessage_" + String(caId)).css({ "display": "block" });
+					jQuery("#spnPrevPurchDate_" + String(caId)).html(strResult.purchaseDate);
+				}
+				else {
+					jQuery("#divPrevMessage_" +  String(caId)).css({ "display": "none" });
+				}
+			},
+			error: jQuery("#divPrevMessage_" + String(caId)).css({ "display": "none" })
+
+		});
+	}
+</script>
+<!--END: previouslybought_scripts-->

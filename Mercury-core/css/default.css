@@ -1,21 +1,35 @@
 /*
 ** Bootstrap over-rides
 */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap');
+body:not(.home-page) #leftBar{display: none;}body:not(.home-page) .midContent{width:100% !important}
+body {
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.antiCls { 
+    visibility: hidden; 
+}
+
 #skip a
 {
-position:absolute;
-left:-10000px;
-top:auto;
-width:1px;
-height:1px;
-overflow:hidden;
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
 }
 #skip a:focus
 {
-position:static;
-width:auto;
-height:auto;
+    position:static;
+    width:auto;
+    height:auto;
 }
+
 .homepage-blog-posts .post-image-container img {
     height: 205px;
 }

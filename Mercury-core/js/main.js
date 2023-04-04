@@ -13,6 +13,10 @@ jQuery(window).resize(function () {
 	sticky_header();
 });
 
+setTimeout(function(){
+	$('.antiCls').css("visibility", "visible");
+}, 800);
+
 function update_flyoutcart() {
 	if (window["_3d_cart"] != undefined) {
         if (_3d_cart.oid == 0)

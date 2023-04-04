@@ -18,14 +18,42 @@
 	<!--START: page_styles-->
 	<link rel="stylesheet" href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css" type="text/css" />
 	<link rel="StyleSheet" href="assets/templates/common-core/css/core.css" type="text/css" />
+	<link
+        rel="preload stylesheet"
+        href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+	<noscript>
+        <link
+            href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </noscript>
+
 	[page_styles]
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Poppins:400,500,600,700" rel="stylesheet">
+
 	<link rel="StyleSheet" href="assets/templates/[template]/css/[stylesheet]" type="text/css" />
+	<link
+        rel="preload stylesheet"
+        href="assets/templates/[template]/css/[stylesheet]"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link
+            href="assets/templates/[template]/css/[stylesheet]"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </noscript>
+	
 	<!--END: page_styles-->
 
 </head>
 <body class="[body_class]" data-currency="[currency_symbol]" data-decimal="[decimal_places]">
-<div id="skip"><a href="#mainContent">Skip to Main Content</a></div>
+<div id="skip"><a href="#mainContent" role="presentation">Skip to Main Content</a></div>
 	<section class="header-navigation sticky-jump">
 		<div class="navbar-header hidden-xs clearfix">
 			<div class="container">
@@ -72,7 +100,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-3 visible-xs text-center head-mobile-nav">
-						<a href="#" id="mobile-menu-trigger" role="button">
+						<a href="#" id="mobile-menu-trigger" role="button" aria-label="menu trigger">
 							<span role="presentation" class="icon-menu"></span>
 							<div>Menu</div>
 						</a>
@@ -105,7 +133,7 @@
 								<!--END: FRAME_SEARCH-->
 							</div>
 							<div class="col-lg-2 col-md-3 col-sm-2">
-								<a href="/view_cart.asp" class="cart_links pull-right hidden-sm">
+								<a href="/view_cart.asp" class="cart_links pull-right hidden-sm" aria-label="view cart link">
 									<span role="presentation" class="icon-basket"></span> My Cart
 									<span class="sr-only">Shopping Cart</span>
 								</a>
@@ -143,7 +171,7 @@
 	</main>
 	
 	<!-- FOOTER -->
-	<footer class="site-footer">
+	<footer class="site-footer antiCls">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-5">
@@ -326,23 +354,73 @@
         </div>
     </div>
 
-    <link rel="stylesheet" href="assets/templates/common-core/lib/fontello/css/fontello.css" type="text/css" />
-    <link rel="stylesheet" href="assets/templates/common-core/lib/fontello/css/animation.css" type="text/css" />
-    <link rel="stylesheet" href="/assets/templates/common-core/lib/animate-me/animate.css" type="text/css" media="screen" />
+	<link
+        rel="preload stylesheet"
+        href="assets/templates/common-core/lib/fontello/css/fontello.min.css"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+    <link
+		href="assets/templates/common-core/lib/fontello/css/fontello.min.css"
+		rel="stylesheet"
+		type="text/css"
+	/>
+    </noscript>
+    <link
+        rel="preload stylesheet"
+        href="assets/templates/common-core/lib/fontello/css/animation.css"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link
+            href="assets/templates/common-core/lib/fontello/css/animation.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </noscript>
+	<link
+        rel="preload stylesheet"
+        href="/assets/templates/common-core/lib/animate-me/nimate.css"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link
+            href="/assets/templates/common-core/lib/animate-me/animate.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </noscript>
 
 	<!--START: page_scripts-->
-	<script src='assets/templates/common-core/lib/jquery.min.js'></script>
-	<script src='assets/templates/common-core/lib/jquery-migrate-3.0.1.min.js'></script>
-	<script src="assets/templates/common-core/lib/bootstrap/js/bootstrap.js"></script>
-	<script src="assets/templates/common-core/js/core.js"></script>
+	<script src="assets/templates/common-core/lib/jquery.min.js"></script>
+	<script src="assets/templates/common-core/lib/jquery-migrate-3.0.1.min.js"></script>
+	<script src="assets/templates/common-core/lib/bootstrap/js/bootstrap.js" defer="defer"></script>
+	<script src="assets/templates/common-core/js/core.js" defer="defer"></script>
 	<script src="assets/templates/[template]/js/scrollreveal.min.js?vcart=7.6.0"></script>
 	<script src="assets/templates/[template]/js/jquery.hoverIntent.js"></script>
-	<script src="assets/templates/[template]/js/main.js"></script>
+	<script src="assets/templates/[template]/js/main.js" defer="defer"></script>
 	[page_scripts]
 	<!--END: page_scripts-->
 
     <!--START: quicksearch-->
-    <link rel="stylesheet" href="assets/templates/common-html5/quicksearch/quicksearch.css" type="text/css" media="screen" />
+    <link
+        rel="preload stylesheet"
+        href="assets/templates/common-core/quicksearch/quicksearch.css"
+        as="style"
+		media="screen"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link
+            href="assets/templates/common-core/quicksearch/quicksearch.css"
+            rel="stylesheet"
+            type="text/css"
+			media="screen"
+        />
+    </noscript>
     <script type="text/javascript" src="assets/templates/common-html5/quicksearch/jquery.quicksearch.js"></script>
     <script type="text/javascript">
         jQuery(function () {
@@ -350,5 +428,41 @@
         });
     </script>
     <!--END: quicksearch-->
+
+	    <!--START: 3dcart stats-->
+<div id="3dStats" class="stats hidden"> 
+    <script async language="JavaScript" type="text/javascript">
+        var file='/stats/count.asp';
+        var stats_d=new Date(); 
+        var stats_s=stats_d.getSeconds(); 
+        var stats_m=stats_d.getMinutes();
+        var stats_x=stats_s*stats_m;
+        var prdID = '[catalogid]';
+        var catID = '[catid]';
+        var stImg = document.createElement('img');
+            stImg.Class
+            stImg.width = '1';
+            stImg.height = '1';
+            stImg.alt = "3dcart stats";
+
+        stats_f='' + escape(document.referrer); stats_f=stats_f.replace('_','----');
+        if (navigator.appName=='Netscape'){stats_b='NS';} 
+        if (navigator.appName=='Microsoft Internet Explorer'){stats_b='MSIE';} 
+        if (navigator.appVersion.indexOf('MSIE 3')>0) {stats_b='MSIE';}
+        stats_u='' + escape(document.URL); stats_u=stats_u.replace('_','----'); stats_w=screen.width; stats_h=screen.height; 
+        stats_v=navigator.appName; 
+        stats_fs = window.screen.fontSmoothingEnabled;
+        if (stats_v != 'Netscape') {stats_c=screen.colorDepth;}
+        else {stats_c=screen.pixelDepth;}
+        stats_j=navigator.javaEnabled();
+        info='w=' + stats_w + '&h=' + stats_h + '&c=' + stats_c + '&r=' + stats_f + '&u='+ stats_u + '&fs=' + stats_fs + '&b=' + stats_b + '&x=' + stats_x + '&cat=' + catID + '&prd=' + prdID;
+
+        stImg.src =file + '?' + info; 
+        document.getElementById('3dStats').appendChild(stImg);
+    </script>
+    <noscript><img src="/stats/count.asp" width="90" height="30" alt="3dcart stats" /> </noscript>
+</div>
+<!--END: 3dcart stats-->
+
 </body>
 </html>
