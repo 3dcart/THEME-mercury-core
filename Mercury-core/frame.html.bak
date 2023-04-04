@@ -427,41 +427,5 @@
         });
     </script>
     <!--END: quicksearch-->
-
-	    <!--START: 3dcart stats-->
-<div id="3dStats" class="stats hidden"> 
-    <script async language="JavaScript" type="text/javascript">
-        var file='/stats/count.asp';
-        var stats_d=new Date(); 
-        var stats_s=stats_d.getSeconds(); 
-        var stats_m=stats_d.getMinutes();
-        var stats_x=stats_s*stats_m;
-        var prdID = '[catalogid]';
-        var catID = '[catid]';
-        var stImg = document.createElement('img');
-            stImg.Class
-            stImg.width = '1';
-            stImg.height = '1';
-            stImg.alt = "3dcart stats";
-
-        stats_f='' + escape(document.referrer); stats_f=stats_f.replace('_','----');
-        if (navigator.appName=='Netscape'){stats_b='NS';} 
-        if (navigator.appName=='Microsoft Internet Explorer'){stats_b='MSIE';} 
-        if (navigator.appVersion.indexOf('MSIE 3')>0) {stats_b='MSIE';}
-        stats_u='' + escape(document.URL); stats_u=stats_u.replace('_','----'); stats_w=screen.width; stats_h=screen.height; 
-        stats_v=navigator.appName; 
-        stats_fs = window.screen.fontSmoothingEnabled;
-        if (stats_v != 'Netscape') {stats_c=screen.colorDepth;}
-        else {stats_c=screen.pixelDepth;}
-        stats_j=navigator.javaEnabled();
-        info='w=' + stats_w + '&h=' + stats_h + '&c=' + stats_c + '&r=' + stats_f + '&u='+ stats_u + '&fs=' + stats_fs + '&b=' + stats_b + '&x=' + stats_x + '&cat=' + catID + '&prd=' + prdID;
-
-        stImg.src =file + '?' + info; 
-        document.getElementById('3dStats').appendChild(stImg);
-    </script>
-    <noscript><img src="/stats/count.asp" width="90" height="30" alt="3dcart stats" /> </noscript>
-</div>
-<!--END: 3dcart stats-->
-
 </body>
 </html>

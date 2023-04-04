@@ -1,0 +1,218 @@
+<section id="home" class="home-page-content page-content">
+    <section class="homepage-slider">
+        <div class="container-fluid">
+        	<div class="row">
+				<section class="homepage-slider">
+                    <!--START: home_carousel-->
+                    <div class="homeCarousel flexslider" data-animation="[hc_effect]" data-slideshowspeed="[hc_delay]">
+                        <ul class="slides">
+                            <!--START: carousel-->
+                            <li><a href="[link]"><img src="/cdn-cgi/image/format=auto/[image]" alt="banner" class="img-responsive" width="850" height="450" /></a></li>
+                            <!--END: carousel-->
+                        </ul>
+                    </div>
+                    <!--END: home_carousel-->
+                </section>
+            </div>
+        </div>
+    </section>
+	
+	<section id="Promos" class="promo-banners hidden">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<a href="/Women_c_1.html">
+						<div class="promo-img">
+							<img src="/assets/images/promos/promo1.jpg" class="img-responsive img" alt="Women's Orthopedic Footwear" />
+							<div class="btn btn-default">Women's Collection</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6">
+					<a href="/Men_c_7.html">
+						<div class="promo-img">
+							<img src="/assets/images/promos/promo2.jpg" class="img-responsive img" alt="Men's Orthotic Shoes" />
+							<div class="btn btn-default">Men's Collection</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6">
+					<a href="/Laceless_c_17.html">
+						<div class="promo-img">
+							<img src="/assets/images/promos/promo3.jpg" class="img-responsive img" alt="Laceless Shoes for Men and Women" />
+							<div class="btn btn-default">Laceless Footwear</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-6">
+					<a href="/Shoe-Inserts_c_8.html">
+						<div class="promo-img">
+							<img src="/assets/images/promos/promo4.jpg" class="img-responsive img" alt="Orthopedic Shoe Inserts" />
+							<div class="btn btn-default">Shoe Inserts</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <!--START: CATEGORY_HEADER-->
+    <section class="category-header content-section">
+	<div class="container">
+	    <div class="content tc-pagebuilder">[CONTENT]</div>
+	</div>
+    </section>
+    <!--END: CATEGORY_HEADER-->
+
+	<!--START: FEATURE_MENU-->
+    <section class="products-section">
+        <div class="container">
+            
+            <h1 class="header-specials"><span>[category_Header-specials]</span></h1>
+
+			<div class="product-carousel flexslider">
+				<!--START: CATEGORY_ITEMS-->
+				<ul class="product-items slides" data-productcols="[product-cols-number]" >
+					<!--START: ITEM_TEMPLATE_0-->
+					<li>
+					[product_items]
+					</li>
+					<!--END: ITEM_TEMPLATE_0-->
+				</ul>
+				<!--END: CATEGORY_ITEMS-->
+			</div>
+            
+        </div>
+    </section>
+	<!--END: FEATURE_MENU-->
+
+	<section class="promo-banners hidden">
+		<div class="container-fluid">
+			<div class="row">
+				<a href="#" role="link">
+					<div class="promo-img">
+						<img src="/assets/images/full-banner.jpg" class="img-responsive img" alt="full-banner" />
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
+	
+	<!--START: HOMEPAGE_BLOGS-->
+	<div class="homepage-blog-posts products-section">
+		<div class="container">
+            <h2 class="header-specials"><span>[blog_recentposts]</span></h2>
+			<ul class="blogList clearfix">
+				<!--START: blog_post-->
+				<li class="blogPost [blog_class]">
+					<!--START: post_image-->
+					<div class="post-image">
+						<div class="post-image-container">
+							<a href="[pagename]" title="[subject]">  
+								<img src="[post_image]" alt="[subject]" class="img-responsive" />
+							</a>
+						</div>
+					</div>			            
+					<!--END: post_image-->
+					<div class="post-content">
+						<!--START: post_title-->
+						<h3><a href="[pagename]" title="[subject]">[subject]</a></h3>
+						<!--END: post_title-->
+
+						<div id="postContent" class="post" data-articleID="[post_id]">
+							[post]
+						</div>
+
+						<div class="post-info clearfix">
+							<div class="postDate">
+								[post_date]
+							</div>
+							<!--START: read-more-->
+							<div class="post-readmore">
+								<a href="[pagename]" title="[subject]" class="btn btn-default">[blog_read-more]</a>
+							</div>
+							<!--END: read-more-->
+						</div>
+					</div>
+				</li>
+				<!--END: blog_post-->
+			</ul>
+		</div>
+	</div>
+    <!--END: HOMEPAGE_BLOGS-->
+
+	<!--START: CATEGORY_FOOTER-->
+    <section class="category-footer content-section">
+        <div class="container">
+            <div class="content tc-pagebuilder">[CONTENT]</div>
+        </div>
+    </section>
+    <!--END: CATEGORY_FOOTER-->
+
+</section>
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/lib/flexslider/jquery.flexslider-min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    jQuery(function () {
+        jQuery('.homeCarousel').flexslider({
+            animation: jQuery('.homeCarousel').attr('data-animation'),
+			slideshow: true,
+            slideshowSpeed: jQuery('.homeCarousel').attr('data-slideshowspeed'),
+            controlNav: false,
+            keyboard: false
+        });
+    });
+	jQuery(function () {
+		
+		// Product Scroll
+		// store the slider in a local variable
+		var $window = jQuery(window),
+			flexslider = { vars: {} };
+
+		// tiny helper function to add breakpoints
+		function getGridSize() {
+			var proCol = jQuery(".product-carousel > ul.slides").attr("data-productcols");
+			return (window.innerWidth <= 567) ? 1 :
+				   (window.innerWidth < 992) ? 2 : proCol;
+		}
+
+		$window.on("load", function () {
+			jQuery('.product-carousel').flexslider({
+				animation: "slide",
+				controlNav: false,
+				keyboard: false,
+				itemWidth: 210,
+				itemMargin: 0,
+				minItems: getGridSize(), // use function to pull in initial value
+				maxItems: getGridSize() // use function to pull in initial value
+
+			});
+			
+			setTimeout(function () {
+				window.dispatchEvent(new Event('resize'));
+			}, 100);
+		});
+
+		// check grid size on resize event
+		$window.resize(function () {
+			var gridSize = getGridSize();
+
+			flexslider.vars.minItems = gridSize;
+			flexslider.vars.maxItems = gridSize;
+
+		});
+		jQuery(document).ready(function(){
+			setTimeout(function () {
+				window.dispatchEvent(new Event('resize'));
+			}, 1000);
+		});
+		
+	}());
+</script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/lib/flexslider/flexslider.css" type="text/css" media="screen" />
+<link href="assets/templates/common-core/lib/contentbuilder/minimalist-blocks/content.min.css" rel="stylesheet" type="text/css" />
+<!--END: template_styles-->
