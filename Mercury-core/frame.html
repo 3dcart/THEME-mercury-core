@@ -52,7 +52,11 @@
 
 </head>
 <body class="[body_class]" data-currency="[currency_symbol]" data-decimal="[decimal_places]">
-<div id="skip"><a href="#mainContent" role="presentation">Skip to Main Content</a></div>
+	<div id="skip">
+        <a href="#site-header">Skip to Header</a>
+        <a href="#page-content">Skip to Main Content</a>
+        <a href="#site-footer">Skip to Footer</a>
+    </div>
 	<section class="header-navigation sticky-jump">
 		<div class="navbar-header hidden-xs clearfix">
 			<div class="container">
@@ -95,7 +99,7 @@
 				</div>
 			</div>
 		</div>
-		<header class="site-header">
+		<header class="site-header" id="site-header">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-3 visible-xs text-center head-mobile-nav">
@@ -170,7 +174,7 @@
 	</main>
 	
 	<!-- FOOTER -->
-	<footer class="site-footer antiCls">
+	<footer class="site-footer antiCls" id="site-footer">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-5">

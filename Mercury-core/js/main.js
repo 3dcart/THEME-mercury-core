@@ -13,6 +13,7 @@ jQuery(window).resize(function () {
 	sticky_header();
 });
 
+//Added this for class on footer and other parts on frame
 setTimeout(function(){
 	$('.antiCls').css("visibility", "visible");
 }, 800);
