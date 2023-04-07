@@ -16,6 +16,8 @@
     <!--END: FRAME_RSSFEEDS -->
 
 	<!--START: page_styles-->
+	<link rel="stylesheet" href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css" type="text/css" />
+	<link rel="StyleSheet" href="assets/templates/common-core/css/core.css" type="text/css" />
 	<link
         rel="preload stylesheet"
         href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css"
@@ -30,17 +32,15 @@
         />
     </noscript>
 
-	<link rel="preload stylesheet" href="assets/templates/common-core/css/core.css" type="text/css" as="style" />
-
 	[page_styles]
 
+	<link rel="StyleSheet" href="assets/templates/[template]/css/[stylesheet]" type="text/css" />
 	<link
         rel="preload stylesheet"
         href="assets/templates/[template]/css/[stylesheet]"
         as="style"
         onload="this.onload=null;this.rel='stylesheet'"
     />
-	
     <noscript>
         <link
             href="assets/templates/[template]/css/[stylesheet]"
@@ -48,6 +48,7 @@
             type="text/css"
         />
     </noscript>
+	
 	<!--END: page_styles-->
 
 </head>
