@@ -208,9 +208,9 @@
 								</div>
 							</form>
 							<div id="mailinglist-response" class="mailinglist-response">
-								<div class="mailinglist-error hidden"><span role="presentation" class="icon-attention"></span> <strong>Ooop!</strong> The email you entered isn't valid.</div>
-								<div class="mailinglist-subscribed hidden"><span role="presentation" class="icon-ok"></span> <strong>WooHoo!</strong> You subscribed successfully.</div>
-								<div class="mailinglist-unsubscribed hidden"><span role="presentation" class="icon-ok"></span> <strong>Ok!</strong> You're unsubscribed.</div>
+								<div class="mailinglist-error hidden">[mailinglist_email-error]</div>
+								<div class="mailinglist-subscribed hidden">[mailinglist_subscribe-success]</div>
+								<div class="mailinglist-unsubscribed hidden">[mailinglist_unsubscribe-success]</div>
 							</div>
 						</div>
 						<div class="clearfix"></div>
@@ -218,31 +218,33 @@
 					<div class="clearfix"></div>
 					<!--START: social_icons-->
 					<ul class="social-icons list-unstyled list-inline">
-						<li class="social-icons-label hidden">Follow Us</li>
+
+						<li class="social-icons-label hidden-md hidden-sm hidden-xs">[frame_social-icons-heading]</li>
+
+						<!--START: social_link_facebook-->
+						<li><a href="[social_link_facebook_url]" class="facebook" target="_blank" title="Like Us on Facebook" aria-label="Like Us on Facebook"><span class="icon-facebook" role="presentation"></span></a></li>
+						<!--END: social_link_facebook-->
+						<!--START: social_link_twitter-->
+						<li><a href="[social_link_twitter_url]" class="twitter" target="_blank" title="Follow Us on Twitter" aria-label="Follow Us on Twitter"><span class="icon-twitter" role="presentation"></span></a></li>
+						<!--END: social_link_twitter-->
+						<!--START: social_link_googleplus-->
+						<li><a href="[social_link_googleplus_url]" class="gplus" target="_blank" title="Follow Us on Google+" aria-label="Follow Us on Google+"><span class="icon-gplus" role="presentation"></span></a></li>
+						<!--END: social_link_googleplus-->
+						<!--START: social_link_youTube-->
+						<li><a href="[social_link_youTube_url]" class="youtube" target="_blank" title="Subscribe to our Channel" aria-label="Subscribe to our Channel"><span class="icon-youtube" role="presentation"></span></a></li>
+						<!--END: social_link_youTube-->
+						<!--START: social_link_pinterest-->
+						<li><a href="[social_link_pinterest_url]" class="pinterest" target="_blank" title="Follow Us on Pinterest" aria-label="Follow Us on Pinterest"><span class="icon-pinterest" role="presentation"></span></a></li>
+						<!--END: social_link_pinterest-->
+						<!--START: social_link_instagram-->
+						<li><a href="[social_link_instagram_url]" class="instagram" target="_blank" title="Follow Us on Instagram" aria-label="Follow Us on Instagram"><span class="icon-instagram" role="presentation"></span></a></li>
+						<!--END: social_link_instagram-->
+						<!--START: social_link_tumblr-->
+						<li><a href="[social_link_tumblr_url]" class="tumblr" target="_blank" title="Follow Us on Tumblr" aria-label="Follow Us on Tumblr"><span class="icon-tumblr" role="presentation"></span></a></li>
+						<!--END: social_link_tumblr-->
 						<!--START: social_link_blog-->
-                        <li><a href="[social_link_blog_url]" class="blog" target="_blank" title="Subscribe to our Blog" aria-label="Subscribe to our Blog" role="button"><span class="icon-rss" role="presentation"></span></a></li>
-                        <!--END: social_link_blog-->
-			<!--START: social_link_facebook-->
-                        <li><a href="[social_link_facebook_url]" class="facebook" target="_blank" title="Like Us on Facebook" aria-label="Like Us on Facebook" role="button"><span class="icon-facebook" role="presentation"></span></a></li>
-                        <!--END: social_link_facebook-->
-			<!--START: social_link_pinterest-->
-                        <li><a href="[social_link_pinterest_url]" class="pinterest" target="_blank" title="Follow Us on Pinterest" aria-label="Follow Us on Pinterest" role="button"><span class="icon-pinterest"></span></a></li>
-                        <!--END: social_link_pinterest-->
-			<!--START: social_link_twitter-->
-                        <li><a href="[social_link_twitter_url]" class="twitter" target="_blank" title="Follow Us on Twitter" aria-label="Follow Us on Twitter" role="button"><span class="icon-twitter" role="presentation"></span></a></li>
-                        <!--END: social_link_twitter-->
-                        <!--START: social_link_googleplus-->
-                        <li><a href="[social_link_googleplus_url]" class="gplus" target="_blank" title="Follow Us on Google+" aria-label="Follow Us on Google+" role="button"><span class="icon-gplus" role="presentation"></span></a></li>
-                        <!--END: social_link_googleplus-->
-			<!--START: social_link_youTube-->
-                        <li><a href="[social_link_youTube_url]" class="youtube" target="_blank" title="Subscribe to our Channel" aria-label="Subscribe to our Channel" role="button"><span class="icon-youtube" role="presentation"></span></a></li>
-                        <!--END: social_link_youTube-->
-			<!--START: social_link_instagram-->
-                        <li><a href="[social_link_instagram_url]" class="instagram" target="_blank" title="Follow Us on Instagram" aria-label="Follow Us on Instagram" role="button"><span class="icon-instagram" role="presentation"></span></a></li>
-                        <!--END: social_link_instagram-->
-                        <!--START: social_link_tumblr-->
-                        <li><a href="[social_link_tumblr_url]" class="tumblr" target="_blank" title="Follow Us on Tumblr" aria-label="Follow Us on Tumblr" role="button"><span class="icon-tumblr" role="presentation"></span></a></li>
-                        <!--END: social_link_tumblr-->
+						<li><a href="[social_link_blog_url]" class="blog" target="_blank" title="Subscribe to our Blog" aria-label="Subscribe to our Blog"><span class="icon-rss" role="presentation"></span></a></li>
+						<!--END: social_link_blog-->
 					</ul>
 					<!--END: social_icons-->
 					<div class="clearfix"></div>
