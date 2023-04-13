@@ -13,6 +13,7 @@ jQuery(window).resize(function () {
 	sticky_header();
 });
 
+//Added this for class on footer and other parts on frame
 setTimeout(function(){
 	$('.antiCls').css("visibility", "visible");
 }, 800);
@@ -370,34 +371,34 @@ jQuery(function () {
 	// see whether device supports touch events (a bit simplistic, but...)
 	var hasTouch = ("ontouchstart" in window);
 	var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-	 
+
 	// hook touch events for drop-down menus
 	// NB: if has touch events, then has standards event handling too
 	if (hasTouch && document.querySelectorAll) {
 		var i, len, element,
 			dropdowns = document.querySelectorAll('.subnav > ul > li > a, #categories > li > a');
-	 
+
 		function menuTouch(event) {
 			// toggle flag for preventing click for this link
 			var i, len, noclick = !(this.dataNoclick);
-	 
+
 			// reset flag on all links
 			for (i = 0, len = dropdowns.length; i < len; ++i) {
 				dropdowns[i].dataNoclick = false;
 			}
-	 
+
 			// set new flag value and focus on dropdown menu
 			this.dataNoclick = noclick;
 			this.focus();
 		}
-	
+
 		function menuClick(event) {
 			// if click isn't wanted, prevent it
 			if (this.dataNoclick) {
 				event.preventDefault();
 			}
 		}
-	 
+
 		for (i = 0, len = dropdowns.length; i < len; ++i) {
 			element = dropdowns[i];
 			element.dataNoclick = false;

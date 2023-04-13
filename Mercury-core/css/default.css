@@ -1,6 +1,7 @@
 /*
 ** Bootstrap over-rides
 */
+/*Fonts loaded via @import*/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap');
 body:not(.home-page) #leftBar{display: none;}body:not(.home-page) .midContent{width:100% !important}
 body {
@@ -10,6 +11,7 @@ body {
 	min-height: 100vh;
 }
 
+/*class added to frame*/
 .antiCls { 
     visibility: hidden; 
 }

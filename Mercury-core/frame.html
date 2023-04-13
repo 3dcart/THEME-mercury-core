@@ -7,17 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
     [META]
 
-    <!--START: FRAME_RSSFEEDS -->
+    <!--START: FRAME_RSSFEEDS-->
     <link rel="alternate" type="application/rss+xml" title="Featured Items (RSS 2.0)" href="[store_url]/rss.asp?type=home" />
     <link rel="alternate" type="application/rss+xml" title="Products On Sale (RSS 2.0)" href="[store_url]/rss.asp?type=onsale" />
     <link rel="alternate" type="application/rss+xml" title="New Releases (RSS 2.0)" href="[store_url]/rss.asp?type=newreleases" />
     <link rel="alternate" type="application/rss+xml" title="Best Sellers (RSS 2.0)" href="[store_url]/rss.asp?type=bestsellers" />
     <link rel="alternate" type="application/rss+xml" title="Latest Blog Posts (RSS 2.0)" href="[store_url]/rss.asp?type=blog" />
-    <!--END: FRAME_RSSFEEDS -->
+    <!--END: FRAME_RSSFEEDS-->
 
 	<!--START: page_styles-->
-	<link rel="stylesheet" href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css" type="text/css" />
-	<link rel="StyleSheet" href="assets/templates/common-core/css/core.css" type="text/css" />
 	<link
         rel="preload stylesheet"
         href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css"
@@ -31,10 +29,9 @@
             type="text/css"
         />
     </noscript>
-
+	<link rel="StyleSheet" href="assets/templates/common-core/css/core.css" type="text/css" />
 	[page_styles]
 
-	<link rel="StyleSheet" href="assets/templates/[template]/css/[stylesheet]" type="text/css" />
 	<link
         rel="preload stylesheet"
         href="assets/templates/[template]/css/[stylesheet]"
@@ -53,7 +50,11 @@
 
 </head>
 <body class="[body_class]" data-currency="[currency_symbol]" data-decimal="[decimal_places]">
-<div id="skip"><a href="#mainContent" role="presentation">Skip to Main Content</a></div>
+	<div id="skip">
+        <a href="#site-header">Skip to Header</a>
+        <a href="#page-content">Skip to Main Content</a>
+        <a href="#site-footer">Skip to Footer</a>
+    </div>
 	<section class="header-navigation sticky-jump">
 		<div class="navbar-header hidden-xs clearfix">
 			<div class="container">
@@ -96,7 +97,7 @@
 				</div>
 			</div>
 		</div>
-		<header class="site-header">
+		<header class="site-header" id="site-header">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-3 visible-xs text-center head-mobile-nav">
@@ -171,7 +172,7 @@
 	</main>
 	
 	<!-- FOOTER -->
-	<footer class="site-footer antiCls">
+	<footer class="site-footer antiCls" id="site-footer">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-5">
@@ -189,7 +190,7 @@
 													<div class="mailinglist-form clearfix">
 														<input class="mailinglist-input form-control" type="text" name="email" placeholder="Signup for our Newsletter" autocomplete="off" aria-required="true" aria-label="email address" aria-invalid="true"/>
 														<button class="mailinglist-submit btn btn-default btn-inverse" type="submit" name="www" aria-label="mailinglist button">
-															<span id="mailing-btn-txt "><i role="presentation" class="icon-mail"></i>[mailinglist_button]</span>
+															<span id="mailing-btn-txt">[mailinglist_button]</span>
 															<span id="mailing-btn-load" class="mailing-btn-load icon-spin2 animate-spin hidden"></span>
 														</button>
 													</div>
@@ -206,9 +207,9 @@
 								</div>
 							</form>
 							<div id="mailinglist-response" class="mailinglist-response">
-								<div class="mailinglist-error hidden"><span role="presentation" class="icon-attention"></span> <strong>Ooop!</strong> The email you entered isn't valid.</div>
-								<div class="mailinglist-subscribed hidden"><span role="presentation" class="icon-ok"></span> <strong>WooHoo!</strong> You subscribed successfully.</div>
-								<div class="mailinglist-unsubscribed hidden"><span role="presentation" class="icon-ok"></span> <strong>Ok!</strong> You're unsubscribed.</div>
+								<div class="mailinglist-error hidden">[mailinglist_email-error]</div>
+								<div class="mailinglist-subscribed hidden">[mailinglist_subscribe-success]</div>
+								<div class="mailinglist-unsubscribed hidden">[mailinglist_unsubscribe-success]</div>
 							</div>
 						</div>
 						<div class="clearfix"></div>
@@ -216,31 +217,33 @@
 					<div class="clearfix"></div>
 					<!--START: social_icons-->
 					<ul class="social-icons list-unstyled list-inline">
-						<li class="social-icons-label hidden">Follow Us</li>
+
+						<li class="social-icons-label hidden-md hidden-sm hidden-xs">[frame_social-icons-heading]</li>
+
+						<!--START: social_link_facebook-->
+						<li><a href="[social_link_facebook_url]" class="facebook" target="_blank" title="Like Us on Facebook" aria-label="Like Us on Facebook"><span class="icon-facebook" role="presentation"></span></a></li>
+						<!--END: social_link_facebook-->
+						<!--START: social_link_twitter-->
+						<li><a href="[social_link_twitter_url]" class="twitter" target="_blank" title="Follow Us on Twitter" aria-label="Follow Us on Twitter"><span class="icon-twitter" role="presentation"></span></a></li>
+						<!--END: social_link_twitter-->
+						<!--START: social_link_googleplus-->
+						<li><a href="[social_link_googleplus_url]" class="gplus" target="_blank" title="Follow Us on Google+" aria-label="Follow Us on Google+"><span class="icon-gplus" role="presentation"></span></a></li>
+						<!--END: social_link_googleplus-->
+						<!--START: social_link_youTube-->
+						<li><a href="[social_link_youTube_url]" class="youtube" target="_blank" title="Subscribe to our Channel" aria-label="Subscribe to our Channel"><span class="icon-youtube" role="presentation"></span></a></li>
+						<!--END: social_link_youTube-->
+						<!--START: social_link_pinterest-->
+						<li><a href="[social_link_pinterest_url]" class="pinterest" target="_blank" title="Follow Us on Pinterest" aria-label="Follow Us on Pinterest"><span class="icon-pinterest" role="presentation"></span></a></li>
+						<!--END: social_link_pinterest-->
+						<!--START: social_link_instagram-->
+						<li><a href="[social_link_instagram_url]" class="instagram" target="_blank" title="Follow Us on Instagram" aria-label="Follow Us on Instagram"><span class="icon-instagram" role="presentation"></span></a></li>
+						<!--END: social_link_instagram-->
+						<!--START: social_link_tumblr-->
+						<li><a href="[social_link_tumblr_url]" class="tumblr" target="_blank" title="Follow Us on Tumblr" aria-label="Follow Us on Tumblr"><span class="icon-tumblr" role="presentation"></span></a></li>
+						<!--END: social_link_tumblr-->
 						<!--START: social_link_blog-->
-                        <li><a href="[social_link_blog_url]" class="blog" target="_blank" title="Subscribe to our Blog" aria-label="Subscribe to our Blog" role="button"><span class="icon-rss" role="presentation"></span></a></li>
-                        <!--END: social_link_blog-->
-			<!--START: social_link_facebook-->
-                        <li><a href="[social_link_facebook_url]" class="facebook" target="_blank" title="Like Us on Facebook" aria-label="Like Us on Facebook" role="button"><span class="icon-facebook" role="presentation"></span></a></li>
-                        <!--END: social_link_facebook-->
-			<!--START: social_link_pinterest-->
-                        <li><a href="[social_link_pinterest_url]" class="pinterest" target="_blank" title="Follow Us on Pinterest" aria-label="Follow Us on Pinterest" role="button"><span class="icon-pinterest"></span></a></li>
-                        <!--END: social_link_pinterest-->
-			<!--START: social_link_twitter-->
-                        <li><a href="[social_link_twitter_url]" class="twitter" target="_blank" title="Follow Us on Twitter" aria-label="Follow Us on Twitter" role="button"><span class="icon-twitter" role="presentation"></span></a></li>
-                        <!--END: social_link_twitter-->
-                        <!--START: social_link_googleplus-->
-                        <li><a href="[social_link_googleplus_url]" class="gplus" target="_blank" title="Follow Us on Google+" aria-label="Follow Us on Google+" role="button"><span class="icon-gplus" role="presentation"></span></a></li>
-                        <!--END: social_link_googleplus-->
-			<!--START: social_link_youTube-->
-                        <li><a href="[social_link_youTube_url]" class="youtube" target="_blank" title="Subscribe to our Channel" aria-label="Subscribe to our Channel" role="button"><span class="icon-youtube" role="presentation"></span></a></li>
-                        <!--END: social_link_youTube-->
-			<!--START: social_link_instagram-->
-                        <li><a href="[social_link_instagram_url]" class="instagram" target="_blank" title="Follow Us on Instagram" aria-label="Follow Us on Instagram" role="button"><span class="icon-instagram" role="presentation"></span></a></li>
-                        <!--END: social_link_instagram-->
-                        <!--START: social_link_tumblr-->
-                        <li><a href="[social_link_tumblr_url]" class="tumblr" target="_blank" title="Follow Us on Tumblr" aria-label="Follow Us on Tumblr" role="button"><span class="icon-tumblr" role="presentation"></span></a></li>
-                        <!--END: social_link_tumblr-->
+						<li><a href="[social_link_blog_url]" class="blog" target="_blank" title="Subscribe to our Blog" aria-label="Subscribe to our Blog"><span class="icon-rss" role="presentation"></span></a></li>
+						<!--END: social_link_blog-->
 					</ul>
 					<!--END: social_icons-->
 					<div class="clearfix"></div>
@@ -295,9 +298,6 @@
             <div class="mobile-menu-close">
                 <a href="#"></a>
             </div>
-            <div class="mobile-menu-widget hidden">
-            	<a href="/"><img src="/assets/images/logos/logo.png" alt="[store_name]" class="animated fadeIn img-responsive"/></a>
-			</div>
             <div class="mobile-menu-widget">
                 <h3>Categories</h3>
                 <div id="mobile-categories"></div>
@@ -399,9 +399,8 @@
 	<script src="assets/templates/common-core/lib/jquery-migrate-3.0.1.min.js"></script>
 	<script src="assets/templates/common-core/lib/bootstrap/js/bootstrap.js" defer="defer"></script>
 	<script src="assets/templates/common-core/js/core.js" defer="defer"></script>
-	<script src="assets/templates/[template]/js/scrollreveal.min.js?vcart=7.6.0"></script>
-	<script src="assets/templates/[template]/js/jquery.hoverIntent.js"></script>
 	<script src="assets/templates/[template]/js/main.js" defer="defer"></script>
+    <script src="assets/templates/[template]/js/jquery.hoverIntent.js"></script>
 	[page_scripts]
 	<!--END: page_scripts-->
 
