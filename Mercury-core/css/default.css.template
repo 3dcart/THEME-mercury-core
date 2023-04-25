@@ -3,18 +3,19 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap');
 body:not(.home-page) #leftBar{display: none;}body:not(.home-page) .midContent{width:100% !important}
+.antiCls, .antiCls-xs { 
+    visibility: hidden; 
+}
+.flex-direction-nav a, .flex-viewport {
+	transform: translateZ(0);
+	will-change: transform;
+}
 body {
 	display: flex;
 	height: 100%;
 	flex-direction: column;
 	min-height: 100vh;
 }
-
-/*class added to frame*/
-.antiCls { 
-    visibility: hidden; 
-}
-
 #skip a
 {
 position:absolute;

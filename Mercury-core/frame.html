@@ -190,7 +190,7 @@
 													<div class="mailinglist-form clearfix">
 														<input class="mailinglist-input form-control" type="text" name="email" placeholder="Signup for our Newsletter" autocomplete="off" aria-required="true" aria-label="email address" aria-invalid="true"/>
 														<button class="mailinglist-submit btn btn-default btn-inverse" type="submit" name="www" aria-label="mailinglist button">
-															<span id="mailing-btn-txt">[mailinglist_button]</span>
+															<span id="mailing-btn-txt "><i role="presentation" class="icon-mail"></i>[mailinglist_button]</span>
 															<span id="mailing-btn-load" class="mailing-btn-load icon-spin2 animate-spin hidden"></span>
 														</button>
 													</div>
@@ -217,8 +217,6 @@
 					<div class="clearfix"></div>
 					<!--START: social_icons-->
 					<ul class="social-icons list-unstyled list-inline">
-
-						<li class="social-icons-label hidden-md hidden-sm hidden-xs">[frame_social-icons-heading]</li>
 
 						<!--START: social_link_facebook-->
 						<li><a href="[social_link_facebook_url]" class="facebook" target="_blank" title="Like Us on Facebook" aria-label="Like Us on Facebook"><span class="icon-facebook" role="presentation"></span></a></li>
@@ -258,11 +256,11 @@
 							</div>
 							
 							<!--START: FRAME_LINKS-->
-							<ul id="extrapages" class="list-unstyled extrapages">
+							<ul id="extrapages" class="list-unstyled extrapages" aria-hidden="menu">
 								<li class="label hidden">Links</li>
 								<!--START: LINKS-->
 								<!--START: LINK_FORMAT-->
-								<li class="col-sm-4"><a href="infopage.asp?page=[link_id]&extra=1" target="[link_target]" class="menu-bottom">[link_name]</a></li>
+								<li class="col-sm-4" role="menuitem"><a href="infopage.asp?page=[link_id]&extra=1" target="[link_target]" class="menu-bottom" aria-hidden="menuitem">[link_name]</a></li>
 								<!--END: LINK_FORMAT-->
 								<!--END: LINKS-->
 							</ul>
@@ -291,7 +289,7 @@
 		</div>
 	</div>
 
-    <a href="#" class="scrollToTop" role="button"><i role="presentation" class="icon-angle-up icon-2x"></i> <span>TOP</span></a>
+    <a href="#" class="scrollToTop" role="button"><i role="presentation" class="icon-angle-up icon-2x"></i> <span aria-label="Scroll to Top">TOP</span></a>
 
     <nav id="mobile-menu" class="mobile-menu">
         <div class="mobile-menu-inner">
@@ -428,40 +426,40 @@
     </script>
     <!--END: quicksearch-->
 
-	    <!--START: 3dcart stats-->
-<div id="3dStats" class="stats hidden"> 
-    <script async language="JavaScript" type="text/javascript">
-        var file='/stats/count.asp';
-        var stats_d=new Date(); 
-        var stats_s=stats_d.getSeconds(); 
-        var stats_m=stats_d.getMinutes();
-        var stats_x=stats_s*stats_m;
-        var prdID = '[catalogid]';
-        var catID = '[catid]';
-        var stImg = document.createElement('img');
-            stImg.Class
-            stImg.width = '1';
-            stImg.height = '1';
-            stImg.alt = "3dcart stats";
-
-        stats_f='' + escape(document.referrer); stats_f=stats_f.replace('_','----');
-        if (navigator.appName=='Netscape'){stats_b='NS';} 
-        if (navigator.appName=='Microsoft Internet Explorer'){stats_b='MSIE';} 
-        if (navigator.appVersion.indexOf('MSIE 3')>0) {stats_b='MSIE';}
-        stats_u='' + escape(document.URL); stats_u=stats_u.replace('_','----'); stats_w=screen.width; stats_h=screen.height; 
-        stats_v=navigator.appName; 
-        stats_fs = window.screen.fontSmoothingEnabled;
-        if (stats_v != 'Netscape') {stats_c=screen.colorDepth;}
-        else {stats_c=screen.pixelDepth;}
-        stats_j=navigator.javaEnabled();
-        info='w=' + stats_w + '&h=' + stats_h + '&c=' + stats_c + '&r=' + stats_f + '&u='+ stats_u + '&fs=' + stats_fs + '&b=' + stats_b + '&x=' + stats_x + '&cat=' + catID + '&prd=' + prdID;
-
-        stImg.src =file + '?' + info; 
-        document.getElementById('3dStats').appendChild(stImg);
-    </script>
-    <noscript><img src="/stats/count.asp" width="90" height="30" alt="3dcart stats" /> </noscript>
-</div>
-<!--END: 3dcart stats-->
-
+	<!--START: 3dcart stats-->
+		<div id="3dStats" class="stats hidden"> 
+			<script async language="JavaScript" type="text/javascript">
+				var file='/stats/count.asp';
+				var stats_d=new Date(); 
+				var stats_s=stats_d.getSeconds(); 
+				var stats_m=stats_d.getMinutes();
+				var stats_x=stats_s*stats_m;
+				var prdID = '[catalogid]';
+				var catID = '[catid]';
+		
+				var stImg = document.createElement('img');
+					stImg.Class
+					stImg.width = '1';
+					stImg.height = '1';
+					stImg.alt = "3dcart stats";
+		
+				stats_f='' + escape(document.referrer); stats_f=stats_f.replace('_','----');
+				if (navigator.appName=='Netscape'){stats_b='NS';} 
+				if (navigator.appName=='Microsoft Internet Explorer'){stats_b='MSIE';} 
+				if (navigator.appVersion.indexOf('MSIE 3')>0) {stats_b='MSIE';}
+				stats_u='' + escape(document.URL); stats_u=stats_u.replace('_','----'); stats_w=screen.width; stats_h=screen.height; 
+				stats_v=navigator.appName; 
+				stats_fs = window.screen.fontSmoothingEnabled;
+				if (stats_v != 'Netscape') {stats_c=screen.colorDepth;}
+				else {stats_c=screen.pixelDepth;}
+				stats_j=navigator.javaEnabled();
+				info='w=' + stats_w + '&h=' + stats_h + '&c=' + stats_c + '&r=' + stats_f + '&u='+ stats_u + '&fs=' + stats_fs + '&b=' + stats_b + '&x=' + stats_x + '&cat=' + catID + '&prd=' + prdID;
+		
+				stImg.src =file + '?' + info; 
+				document.getElementById('3dStats').appendChild(stImg);
+			</script>
+			<noscript><img src="/stats/count.asp" width="90" height="30" alt="3dcart stats" /> </noscript>
+		</div>
+	<!--END: 3dcart stats-->
 </body>
 </html>
