@@ -11,6 +11,12 @@ body:not(.home-page) #leftBar{display: none;}body:not(.home-page) .midContent{wi
 	transform: translateZ(0);
 	will-change: transform;
 }
+.fullwidth-slider.flexslider {
+    border-radius:0;
+}
+.fullwidth-slider img{
+    width: 100%;
+}
 body {
 	display: flex;
 	height: 100%;
@@ -1876,6 +1882,15 @@ span.freeshipping {
 		margin-bottom: 0px;
 		height: auto !important;
 	}
+    .flex-direction-nav a:before {
+        font-size: 24px;
+    }
+    .flex-direction-nav a {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        margin: -12px 0 0;
+    }
 }
 
 .homeCarousel.flexslider .slides img {
@@ -2611,4 +2626,10 @@ body.view-cart .middle-grid, body.my-account .middle-grid, body.view-cart #midCo
 @keyframes stuckFadeIn{
 	0%{opacity:0}
 	100%{opacity:1}
+}
+
+@media(min-width: 768px) {
+    .revealOnScroll {
+        opacity:0;
+    }
 }

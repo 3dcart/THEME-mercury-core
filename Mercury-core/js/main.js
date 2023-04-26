@@ -13,11 +13,6 @@ jQuery(window).resize(function () {
 	sticky_header();
 });
 
-//Added this for class on footer and other parts on frame
-setTimeout(function(){
-	$('.antiCls').css("visibility", "visible");
-}, 800);
-
 function update_flyoutcart() {
 	if (window["_3d_cart"] != undefined) {
         if (_3d_cart.oid == 0)
@@ -453,3 +448,7 @@ jQuery(function () {
         }
     });
 });
+
+setTimeout(function(){
+	$('.antiCls, .antiCls-xs').css("visibility", "visible");
+}, 800);
