@@ -162,33 +162,25 @@
 </section>
 
 <!--START: template_scripts-->
-<script type="text/javascript" src="/assets/templates/common-core/lib/flexslider/jquery.flexslider-min.js"></script>
+<script defer id="FlexSliderJS" type="text/javascript" src="/assets/templates/common-core/lib/flexslider/jquery.flexslider-min.js" ></script>
 <script type="text/javascript" charset="utf-8">
-	jQuery(function () {
-		
-		// Homepage Carousel
-		jQuery('.homeCarousel').flexslider({
-            animation: jQuery('.homeCarousel').attr('data-animation'),
-			slideshow: true,
-            slideshowSpeed: jQuery('.homeCarousel').attr('data-slideshowspeed'),
-            controlNav: false,
-            keyboard: false
-        });
-		
-		// Product Scroll
-		// store the slider in a local variable
-		var $window = jQuery(window),
-			flexslider = { vars: {} };
+	$(window).load(function(){
+		FlexSliderJS.addEventListener('load', function () {
+			// Homepage Carousel
+			$('.homeCarousel').flexslider({
+				animation: jQuery('.homeCarousel').attr('data-animation'),
+				slideshow: true,
+				slideshowSpeed: jQuery('.homeCarousel').attr('data-slideshowspeed'),
+				controlNav: false,
+				keyboard: false
+			});
+			
+			// Product Scroll
+			// store the slider in a local variable
+			var $window = jQuery(window),
+				flexslider = { vars: {} };
 
-		// tiny helper function to add breakpoints
-		function getGridSize() {
-			var proCol = jQuery(".product-carousel > ul.slides").attr("data-productcols");
-			return (window.innerWidth <= 567) ? 1 :
-				   (window.innerWidth < 992) ? 2 : proCol;
-		}
-
-		$window.on("load", function () {
-			jQuery('.product-carousel').flexslider({
+			$('.product-carousel').flexslider({
 				animation: "slide",
 				controlNav: false,
 				keyboard: false,
@@ -198,20 +190,29 @@
 				maxItems: getGridSize() // use function to pull in initial value
 
 			});
+
+			// check grid size on resize event
+			$window.resize(function () {
+				var gridSize = getGridSize();
+
+				flexslider.vars.minItems = gridSize;
+				flexslider.vars.maxItems = gridSize;
+
+			});
 			
 			setTimeout(function () {
 				window.dispatchEvent(new Event('resize'));
 			}, 100);
 		});
+		
+		// tiny helper function to add breakpoints
+		function getGridSize() {
+			var proCol = jQuery(".product-carousel > ul.slides").attr("data-productcols");
+			return (window.innerWidth <= 567) ? 1 :
+				   (window.innerWidth < 992) ? 2 : proCol;
+		}
 
-		// check grid size on resize event
-		$window.resize(function () {
-			var gridSize = getGridSize();
 
-			flexslider.vars.minItems = gridSize;
-			flexslider.vars.maxItems = gridSize;
-
-		});
 		jQuery(document).ready(function(){
 			setTimeout(function () {
 				window.dispatchEvent(new Event('resize'));

@@ -178,6 +178,11 @@ section.subcategories_block {
         margin: 0 auto 20px auto;
     }
 }
+@media (max-width: 767px) {
+	.antiCls-xs { 
+		visibility: hidden; 
+	}
+}
 .subcategories > ul > li > a {
     color: #5d5d5d;
     text-decoration: none;
