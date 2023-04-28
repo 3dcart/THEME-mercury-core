@@ -3,7 +3,7 @@
 */
 /*Fonts loaded via @import*/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap');
-body:not(.home-page) #leftBar{display: none;}body:not(.home-page) .midContent{width:100% !important}
+body:not(.home-page) #midCol{width:100% !important;}
 .antiCls, .antiCls-xs { 
     visibility: hidden; 
 }
@@ -2553,7 +2553,7 @@ body.view-cart #leftBar, body.my-account #leftBar {
 }
 body.view-cart .middle-grid, body.my-account .middle-grid, body.view-cart #midCol, body.my-account #midCol {
 	width: 100%;
-	max-width: none;
+	max-width: 100%;
 	padding: 0;
 }
 
