@@ -21,16 +21,16 @@
 <div class="sidebar-widget">
 	<h4 class="widget-header">[frame_categories]</h4>
 	<nav id="categories-outer" class="widget-body">
-		<ul id="categories" class="sidebarUL">
+		<ul id="categories" class="sidebarUL" role="list">
 			<!--START: CATEGORIES-->
-			<li class="[dropdown_class]" role="menuitem">
+			<li class="[dropdown_class]" role="listitem">
 				<!--START: CATEGORY_FORMAT-->
 				<a href="view_category.asp?cat=CATID">CATEGORY</a>
 				<!--END: CATEGORY_FORMAT-->
 				<!--START: SUB_CATEGORIES-->
-				<ul class="dropdown-menu animated">
+				<ul class="dropdown-menu animated" role="list">
 					<!--START: SUB_CATEGORY_FORMAT-->
-					<li class=""><a href="view_category.asp?cat=CATID" class="subcat">CATEGORY</a></li>
+					<li class="" role="listitem"><a href="view_category.asp?cat=CATID" class="subcat">CATEGORY</a></li>
 					<!--END: SUB_CATEGORY_FORMAT-->
 				</ul>
 				<!--END: SUB_CATEGORIES-->
@@ -53,159 +53,6 @@
 	</div>
 </div>
 <!--END: FRAME_BYPRICE-->
-
-<!--START: NEW_RELEASES_BLOCK-->
-<div id="modNewReleases" class="sidebar-widget">
-	<h4 class="widget-header">[frame_new-releases]</h4>
-	<div class="widget-body">
-		<!--START: newreleases-->
-		<!--START: newreleases_topitem-->
-		<div class="new-release-item new-releases-item-first product-item">
-			<div class="row">
-				<div class="col-xs-4">
-					<div class="img"><a href="product.asp?itemid=[catalogid]"><img src="/cdn-cgi/image/format=auto/[thumbnail]" alt="[name]" class="img-responsive" /></a></div>
-				</div>
-				<div class="col-xs-8">
-					<div class="info">
-						<div class="name"><a href="product.asp?itemid=[catalogid]" class="link">[name]</a></div>
-				
-						<!--START: freeshippingblock-->
-						<div class="status">
-							<span class="freeshipping" aria-label="freeshipping">[freeshipping]</span>
-						</div>
-						<!--END: freeshippingblock-->
-
-						<div class="price">
-							<!--START: ITEMPRICE-->
-							<span class="regular-price" aria-label="regular price">[ITEMPRICE]</span>
-							<!--END: ITEMPRICE-->
-							<!--START: SALEPRICE-->
-							<del class="regular-price" aria-label="regular price">[ITEMPRICE]</del>
-							<span class="sale-price" aria-label="sale price">[ITEMSALEPRICE]</span>
-							<!--END: SALEPRICE-->
-						</div>
-
-						<!--START: product_review_average-->
-						<div class="reviews">
-							<span class="reviews-stars rating-[review_average]" role="presentation"></span> <span class="reviews-count" role="presentation">([review_count])</span>
-						</div>
-						<!--END: product_review_average-->
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--END: newreleases_topitem-->
-
-		<!--START: newreleases_item-->
-		<div class="new-release-item product-item">
-			<div class="row">
-				<div class="col-xs-4">
-					<div class="img"><a href="product.asp?itemid=[catalogid]"><img src="/cdn-cgi/image/format=auto/[thumbnail]" alt="[name]" class="img-responsive" /></a></div>
-				</div>
-				<div class="col-xs-8">
-					<div class="info">
-						<div class="name"><a href="product.asp?itemid=[catalogid]" class="link">[name]</a></div>
-				
-						<!--START: freeshippingblock-->
-						<div class="status">
-							<span class="freeshipping" aria-label="freeshipping">[freeshipping]</span>
-						</div>
-						<!--END: freeshippingblock-->
-
-						<div class="price">
-							<!--START: ITEMPRICE-->
-							<span class="regular-price" aria-label="regular price">[ITEMPRICE]</span>
-							<!--END: ITEMPRICE-->
-							<!--START: SALEPRICE-->
-
-							<del class="regular-price" aria-label="regular price">[ITEMPRICE]</del>
-							<span class="sale-price" aria-label="sale price">[ITEMSALEPRICE]</span>
-							<!--END: SALEPRICE-->
-						</div>
-
-						<!--START: product_review_average-->
-						<div class="reviews">
-							<span class="reviews-stars rating-[review_average]" role="presentation"></span> <span class="reviews-count" role="presentation">([review_count])</span>
-						</div>
-						<!--END: product_review_average-->
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--END: newreleases_item-->
-		<!--END: newreleases-->
-	</div>
-</div>
-<!--END: NEW_RELEASES_BLOCK-->
-
-<!--START: TOP_SELLERS_BLOCK-->
-<div id="modTopSellers" class="sidebar-widget">
-	<h4 class="widget-header">[frame_top-sellers]</h4>
-	<div class="widget-body">
-		<!--START: topsellers-->
-		<!--START: topsellers_topitem-->
-		<div class="topsellers-item topsellers-item-first product-item">
-			<div class="img">
-				<a href="product.asp?itemid=[catalogid]"><img src="/cdn-cgi/image/format=auto/[thumbnail]" alt="[name]" class="img-responsive" /></a>
-			</div>
-			<div class="info">
-				<div class="name"><a href="product.asp?itemid=[catalogid]" class="link">[name]</a></div>
-
-				<div class="price">
-					<!--START: ITEMPRICE-->
-					<span class="regular-price" aria-label="regular price">[ITEMPRICE]</span>
-					<!--END: ITEMPRICE-->
-					<!--START: SALEPRICE-->
-					<del class="regular-price" aria-label="regular price">[ITEMPRICE]</del>
-					<span class="sale-price" aria-label="sale price">[ITEMSALEPRICE]</span>
-					<!--END: SALEPRICE-->
-				</div>
-
-				<!--START: product_review_average-->
-				<div class="reviews">
-					<span class="reviews-stars rating-[review_average]" role="presentation"></span> <span class="reviews-count" role="presentation">([review_count])</span>
-				</div>
-				<!--END: product_review_average-->
-			</div>
-		</div>
-		<!--END: topsellers_topitem-->
-
-		<!--START: topsellers_item-->
-		<div class="new-release-item product-item">
-			<div class="row">
-				<div class="col-xs-4">
-					<div class="img"><a href="product.asp?itemid=[catalogid]"><img src="/cdn-cgi/image/format=auto/[thumbnail]" alt="[name]" class="img-responsive" /></a></div>
-				</div>
-				<div class="col-xs-8">
-					<div class="info">
-						<div class="name"><a href="product.asp?itemid=[catalogid]" class="link">[name]</a></div>
-
-						<div class="price">
-							<!--START: ITEMPRICE-->
-							<span class="regular-price" aria-label="regular price">[ITEMPRICE]</span>
-							<!--END: ITEMPRICE-->
-							<!--START: SALEPRICE-->
-							<del class="regular-price" aria-label="regular price">[ITEMPRICE]</del>
-							<span class="sale-price" aria-label="sale price">[ITEMSALEPRICE]</span>
-							<!--END: SALEPRICE-->
-						</div>
-
-						<!--START: product_review_average-->
-						<div class="reviews">
-							<span class="reviews-stars rating-[review_average]" role="presentation"></span> <span class="reviews-count" role="presentation">([review_count])</span>
-						</div>
-						<!--END: product_review_average-->
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--END: topsellers_item-->
-
-		<!--END: topsellers-->
-	</div>
-    
-</div>
-<!--END: TOP_SELLERS_BLOCK--> 
 
 <!--START: LEFT_BANNER-->
 <div id="leftBanner" class="sidebar-widget">[LEFT_BANNER]</div>

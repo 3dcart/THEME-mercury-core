@@ -3,19 +3,26 @@
 */
 /*Fonts loaded via @import*/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap');
-body:not(.home-page) #leftBar{display: none;}body:not(.home-page) .midContent{width:100% !important}
+body:not(.home-page) #midCol{width:100% !important;}
+.antiCls, .antiCls-xs { 
+    visibility: hidden; 
+}
+.flex-direction-nav a, .flex-viewport {
+	transform: translateZ(0);
+	will-change: transform;
+}
+.fullwidth-slider.flexslider {
+    border-radius:0;
+}
+.fullwidth-slider img{
+    width: 100%;
+}
 body {
 	display: flex;
 	height: 100%;
 	flex-direction: column;
 	min-height: 100vh;
 }
-
-/*class added to frame*/
-.antiCls { 
-    visibility: hidden; 
-}
-
 #skip a
 {
     position:absolute;
@@ -177,6 +184,11 @@ section.subcategories_block {
         max-width: 300px;
         margin: 0 auto 20px auto;
     }
+}
+@media (max-width: 767px) {
+	.antiCls-xs { 
+		visibility: hidden; 
+	}
 }
 .subcategories > ul > li > a {
     color: #5d5d5d;
@@ -441,7 +453,7 @@ div.qaLink a {
 }
 @media (min-width: 992px) {
 	.header-navigation {
-		margin-bottom: 40px;
+		margin-bottom: 0px;
 	}
 }
 body.home-page .header-navigation {
@@ -1420,7 +1432,7 @@ ul.payment-icons {
 }
 @media(min-width: 768px) {
     ul.payment-icons {
-        text-align: left;
+        text-align: center;
     }
 }
 ul.payment-icons li {
@@ -1452,7 +1464,7 @@ ul.social-icons li.social-icons-label {
     float: none;
     margin: 8px 0 8px 0;
     padding: 0 !important;
-    text-align: center;
+    text-align: left;
     color: #fff;
 }
 .social-icons li {
@@ -1460,7 +1472,7 @@ ul.social-icons li.social-icons-label {
 	padding: 0;
 }
 .social-icons li a {
-    color: #fff;
+    color: #91201D;
     background-color: transparent;
     /* width: 30px; */
     height: 30px;
@@ -1875,6 +1887,15 @@ span.freeshipping {
 		margin-bottom: 0px;
 		height: auto !important;
 	}
+    .flex-direction-nav a:before {
+        font-size: 24px;
+    }
+    .flex-direction-nav a {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        margin: -12px 0 0;
+    }
 }
 
 .homeCarousel.flexslider .slides img {
@@ -2036,7 +2057,7 @@ span.freeshipping {
     .logo {
 
         text-align: center;
-        height: 90px;
+        height: 70px;
     }
     .logo img {
         position: absolute;
@@ -2532,7 +2553,7 @@ body.view-cart #leftBar, body.my-account #leftBar {
 }
 body.view-cart .middle-grid, body.my-account .middle-grid, body.view-cart #midCol, body.my-account #midCol {
 	width: 100%;
-	max-width: none;
+	max-width: 100%;
 	padding: 0;
 }
 
@@ -2610,4 +2631,10 @@ body.view-cart .middle-grid, body.my-account .middle-grid, body.view-cart #midCo
 @keyframes stuckFadeIn{
 	0%{opacity:0}
 	100%{opacity:1}
+}
+
+@media(min-width: 768px) {
+    .revealOnScroll {
+        opacity:0;
+    }
 }
