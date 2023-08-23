@@ -201,11 +201,10 @@ jQuery(document).ready(function () {
     		jQuery(this).find('.dropdown-menu').first().stop(true, true).delay(50).slideUp('fast');
 
     	});
-
-    	jQuery('.navbar .dropdown > a').click(function () {
-//    		location.href = this.href;
-    	});
     }
+    jQuery('#categories li > a').click(function () {
+    		location.href = this.href;
+    	});
 	
 });
 
