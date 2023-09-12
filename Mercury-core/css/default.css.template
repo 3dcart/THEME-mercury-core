@@ -31,7 +31,7 @@ position:static;
 width:auto;
 height:auto;
 }
-
+#mobSearch{display:none !important}
 .homepage-blog-posts .post-image-container img {
     height: 205px;
 }
